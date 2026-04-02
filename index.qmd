@@ -1,6 +1,16 @@
 ---
-title: "project"
+title: "Yo"
+toc: false
+about:
+  image: coolpic.jpg
+  template: jolla
+  image-shape: rectangle
+  image-width: 15em
 ---
+
+:::{#bio}
+
+Whatup guys im a pokemon master
 
 This is a Quarto website.
 
