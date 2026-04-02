@@ -1,17 +1,15 @@
 ---
-title: "Yo"
+title: "Yooooo"
 toc: false
 about:
   image: coolpic.jpg
   template: jolla
   image-shape: rectangle
-  image-width: 15em
+  image-width: 20em
 ---
 
 :::{#bio}
 
 Whatup guys im a pokemon master
 
-This is a Quarto website.
-
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+This website will be cool trust me
