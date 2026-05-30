@@ -13,3 +13,8 @@ about:
 Whatup guys im a pokemon master
 
 This website will be cool trust me
+
+::: {#landing-icons}
+[{{< fa brands github title="github" >}}](https://github.com/Muizzzzz/Muizzzzz.github.io){target="_blank"} &nbsp; [{{< fa envelope title="envelope" >}}](khanm@lawrence.edu)
+:::
+:::
