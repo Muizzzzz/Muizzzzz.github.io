@@ -1,20 +1,39 @@
 ---
-title: "Yooooo"
+title: "Muizz Aman Khan"
 toc: false
 about:
+  template: trestle
   image: coolpic.jpg
-  template: jolla
-  image-shape: rectangle
-  image-width: 20em
+  image-shape: round
+  image-width: 16em
+  links:
+    - icon: github
+      text: GitHub
+      href: https://github.com/Muizzzzz
+    - icon: linkedin
+      text: LinkedIn
+      href: https://www.linkedin.com/in/muizz-aman-khan-1a8535312/
+    - icon: envelope
+      text: Email
+      href: mailto: khanm@lawrence.edu
 ---
 
-:::{#bio}
 
-Whatup guys im a pokemon master
+Hi, I'm Muizz, a Data science / CS student at Lawrence University in Appleton, Wisconsin. My interest in Data science stems from my computer science interests and I wish to improve and utilize those skills to solve real world problems with data.
 
-This website will be cool trust me
+This site collects my projects and the things I'm working on. Take a look around.
+
+## Skills
+
+Java (FX/FXML), Python, C++, SQL, JavaScript, HTML/CSS, R, TypeScript
+
+## Beyond Class
+
+to be filled
+
 
 ::: {#landing-icons}
-[{{< fa brands github title="github" >}}](https://github.com/Muizzzzz/Muizzzzz.github.io){target="_blank"} &nbsp; [{{< fa envelope title="envelope" >}}](khanm@lawrence.edu)
+[{{< fa brands github title="github" >}}](https://github.com/Muizzzzz/Muizzzzz.github.io){target="_blank"} &nbsp;
+[{{< fa brands linkedin title="linkedin" >}}](https://www.linkedin.com/in/muizz-aman-khan-1a8535312/){target="_blank"} &nbsp; [{{< fa envelope title="envelope" >}}](khanm@lawrence.edu) 
 :::
 :::
