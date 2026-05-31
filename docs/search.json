@@ -12,5 +12,47 @@
     "title": "About",
     "section": "",
     "text": "About this site"
+  },
+  {
+    "objectID": "index.html#skills",
+    "href": "index.html#skills",
+    "title": "Muizz Aman Khan",
+    "section": "Skills",
+    "text": "Skills\nJava (FX/FXML), Python, C++, SQL, JavaScript, HTML/CSS, R, TypeScript"
+  },
+  {
+    "objectID": "index.html#beyond-class",
+    "href": "index.html#beyond-class",
+    "title": "Muizz Aman Khan",
+    "section": "Beyond Class",
+    "text": "Beyond Class\nto be filled"
+  },
+  {
+    "objectID": "sql_project.html",
+    "href": "sql_project.html",
+    "title": "sql_project",
+    "section": "",
+    "text": "Team project (Team 3), ADC 405. Full code & data: GitHub repo."
+  },
+  {
+    "objectID": "sql_project.html#overview",
+    "href": "sql_project.html#overview",
+    "title": "sql_project",
+    "section": "Overview",
+    "text": "Overview\nto be filled"
+  },
+  {
+    "objectID": "allin1_project.html",
+    "href": "allin1_project.html",
+    "title": "allin1_project",
+    "section": "",
+    "text": "soooooon"
+  },
+  {
+    "objectID": "text_analysis_project.html",
+    "href": "text_analysis_project.html",
+    "title": "text_analysis_project",
+    "section": "",
+    "text": "sooooon"
   }
 ]

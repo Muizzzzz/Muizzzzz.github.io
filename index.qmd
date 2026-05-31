@@ -2,7 +2,7 @@
 title: "Muizz Aman Khan"
 toc: false
 about:
-  template: trestle
+  template: trestles
   image: coolpic.jpg
   image-shape: round
   image-width: 16em
@@ -15,7 +15,7 @@ about:
       href: https://www.linkedin.com/in/muizz-aman-khan-1a8535312/
     - icon: envelope
       text: Email
-      href: mailto: khanm@lawrence.edu
+      href: mailto:khanm@lawrence.edu
 ---
 
 
@@ -35,5 +35,4 @@ to be filled
 ::: {#landing-icons}
 [{{< fa brands github title="github" >}}](https://github.com/Muizzzzz/Muizzzzz.github.io){target="_blank"} &nbsp;
 [{{< fa brands linkedin title="linkedin" >}}](https://www.linkedin.com/in/muizz-aman-khan-1a8535312/){target="_blank"} &nbsp; [{{< fa envelope title="envelope" >}}](khanm@lawrence.edu) 
-:::
 :::

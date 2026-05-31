@@ -3,11 +3,19 @@ project:
   output-dir: docs
 
 website:
-  title: "project"
+  title: "Muizz Aman Khan"
   navbar:
     left:
       - href: index.qmd
         text: Home
+      - text: Projects
+        menu:
+          - href: sql_project.qmd
+            text: SQL
+          - href: text_analysis_project.qmd
+            text: Text Analysis
+          - href: allin1_project.qmd
+            text: R Package (allin1)
 
 format:
   html:

@@ -1,0 +1,9 @@
+---
+title: "sql_project"
+---
+
+*Team project (Team 3), ADC 405. Full code & data: [GitHub repo](https://github.com/ADC-405-S26/Project_2_SQL_Team_3).*
+
+## Overview
+
+to be filled
