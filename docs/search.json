@@ -292,5 +292,40 @@
     "title": "My Other Side",
     "section": "",
     "text": "When I’m not working with data or code, I’m usually deep in a game or an anime.\nVideo games are my biggest hobby, Pokémon above all, which is exactly why it keeps turning up in my work here (both the SQL database and the text analysis are built on Pokémon data). Lately I’ve been getting into Persona, a JRPG that scratches a similar itch and has quickly become a favorite.\nOn the anime side, One Piece is my all-time favorite, if you want to talk about it (or argue about it), I’m always up for it.\nPart of why I like building projects around these interests is that it lets me explore data science on my own terms, working with the kind of data most people never touch. It keeps the learning fun, and the fun keeps me learning."
+  },
+  {
+    "objectID": "poster_project.html",
+    "href": "poster_project.html",
+    "title": "Poster: The Evolution of S into R",
+    "section": "",
+    "text": "Poster project with Martin Tran for STAT 405 (Advanced Data Computing), built in R. Open the full poster →"
+  },
+  {
+    "objectID": "poster_project.html#overview",
+    "href": "poster_project.html#overview",
+    "title": "Poster: The Evolution of S into R",
+    "section": "Overview",
+    "text": "Overview\nA conference-style research poster tracing how the S language (Bell Labs, 1970s) evolved into R, and why S’s original design principles still underpin modern data science. The entire poster (layout, theme, and content) was generated from a single R Markdown source using the posterdown (iheiddown) format, so it’s fully reproducible from code rather than laid out by hand."
+  },
+  {
+    "objectID": "poster_project.html#preview",
+    "href": "poster_project.html#preview",
+    "title": "Poster: The Evolution of S into R",
+    "section": "Preview",
+    "text": "Preview\n\n\n\nPreview of the S-to-R poster\n\n\nClick the poster to open the full-resolution version in a new tab."
+  },
+  {
+    "objectID": "poster_project.html#what-it-covers",
+    "href": "poster_project.html#what-it-covers",
+    "title": "Poster: The Evolution of S into R",
+    "section": "What it covers",
+    "text": "What it covers\n\nThe lineage from S to R, and the three design ideas carried the whole way through: everything is an object, everything is a function call, and interfaces to other languages are built in.\nWhy those choices mattered for data science, the data frame, models as objects, and the CRAN package ecosystem.\nR’s own innovations on top of S: open-source licensing, packages + CRAN, lexical scoping, and lazy evaluation.\nA comparison of core S concepts and how each lives on in R today."
+  },
+  {
+    "objectID": "poster_project.html#tools",
+    "href": "poster_project.html#tools",
+    "title": "Poster: The Evolution of S into R",
+    "section": "Tools",
+    "text": "Tools\nR · R Markdown · posterdown (iheiddown template) · custom CSS theming"
   }
 ]
