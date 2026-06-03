@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Muizz Aman Khan</title>
+<title>Rhombus StreamDeck Plugin – Muizz Aman Khan</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -35,6 +35,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
@@ -72,7 +73,7 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-fixed fullcontent quarto-light">
+<body class="nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -90,7 +91,7 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page"> 
+    <a class="nav-link" href="./index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item dropdown ">
@@ -127,53 +128,89 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul class="collapse">
+  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
+  <li><a href="#what-it-does" id="toc-what-it-does" class="nav-link" data-scroll-target="#what-it-does">What it does</a></li>
+  <li><a href="#how-its-built" id="toc-how-its-built" class="nav-link" data-scroll-target="#how-its-built">How it’s built</a></li>
+  <li><a href="#source" id="toc-source" class="nav-link" data-scroll-target="#source">Source</a></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
-<div class="quarto-about-trestles">
-  <div class="about-entity">
-    <img src="coolpic.jpg" class="about-image
-  round " style="height: 16em; width: 16em;">
+<main class="content" id="quarto-document-content">
+
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Muizz Aman Khan</h1>
+<h1 class="title">Rhombus StreamDeck Plugin</h1>
+<p class="subtitle lead">Controlling a physical security system from an Elgato Stream Deck</p>
 </div>
+
+
+
 <div class="quarto-title-meta">
+
+    
+  
+    
   </div>
+  
+
+
 </header>
-    <div class="about-links">
-  <a href="https://github.com/Muizzzzz" class="about-link" rel="" target="">
-    <i class="bi bi-github"></i>
-     <span class="about-link-text">GitHub</span>
-  </a>
-  <a href="https://www.linkedin.com/in/muizz-aman-khan-1a8535312/" class="about-link" rel="" target="">
-    <i class="bi bi-linkedin"></i>
-     <span class="about-link-text">LinkedIn</span>
-  </a>
-  <a href="mailto:khanm@lawrence.edu" class="about-link" rel="" target="">
-    <i class="bi bi-envelope"></i>
-     <span class="about-link-text">Email</span>
-  </a>
-</div>
-  </div>
-  <div class="about-contents"><main class="content" id="quarto-document-content">
-<p>Hi, I’m Muizz, a Data science / CS student at Lawrence University in Appleton, Wisconsin. My interest in Data science stems from my computer science interests and I wish to improve and utilize those skills to solve real world problems with data.</p>
-<p>This site collects my projects and the things I’m working on. Take a look around.</p>
-<section id="skills" class="level2">
-<h2 data-anchor-id="skills">Skills</h2>
-<p>Java (FX/FXML), Python, C++, SQL, JavaScript, HTML/CSS, R, TypeScript</p>
+
+
+<p><em>A project done during my internship with Rhombus Systems from June 2025 - August 2025. Source on <a href="https://github.com/Muizzzzz/rhombus-streamdeck">GitHub</a>.</em></p>
+<section id="overview" class="level2">
+<h2 class="anchored" data-anchor-id="overview">Overview</h2>
+<p><code>rhombus-streamdeck</code> is a plugin I built that turns the physical buttons of an Elgato Stream Deck into live controls for a <a href="https://www.rhombus.com/">Rhombus</a> security system. A single button press can start a camera stream, unlock an access-controlled door, or play audio through a gateway. Each button shows its real-time state right on the key itself.</p>
+<p>It’s a systems-integration project: a hardware-peripheral SDK on one side, the Rhombus API on the other, and real-time state tracking tying them together, written mostly in TypeScript with supporting shell scripts.</p>
 </section>
-<section id="beyond-class" class="level2">
-<h2 data-anchor-id="beyond-class">Beyond Class</h2>
-<p>I love playing video games (especially Pokemon as you’ll see with my projects) and watching anime. I’ve started playing Persona which is a JRPG similar to Pokemon and it has piqued my interest quite a bit. My favorite anime is One Piece (contact me if you want to talk about this stuff, I’m open to it).</p>
-<p>I feel like making projects related to those interests allows me to explore the field of data science in my own fun way and gain experience with working on data that people usually don’t work on.</p>
+<section id="what-it-does" class="level2">
+<h2 class="anchored" data-anchor-id="what-it-does">What it does</h2>
+<section id="camera-control" class="level3">
+<h3 class="anchored" data-anchor-id="camera-control">Camera control</h3>
+<p>Toggle a live camera feed on or off with one button. The plugin pulls the camera’s HLS stream from the Rhombus API and opens it in the MPV player via Streamlink, with the button showing an on/off (green/red) state indicator.</p>
+</section>
+<section id="door-lock-control" class="level3">
+<h3 class="anchored" data-anchor-id="door-lock-control">Door lock control</h3>
+<p>Send an unlock command to a Rhombus access-controlled door from a button press. The button polls lock status every few seconds and reflects it visually, red for locked, green for unlocked, so the current state is always visible at a glance.</p>
+</section>
+<section id="audio-gateway-control" class="level3">
+<h3 class="anchored" data-anchor-id="audio-gateway-control">Audio gateway control</h3>
+<p>Start and stop audio playback through a Rhombus audio gateway, with the connection status tracked live over a WebSocket and surfaced on the button.</p>
+</section>
+</section>
+<section id="how-its-built" class="level2">
+<h2 class="anchored" data-anchor-id="how-its-built">How it’s built</h2>
+<ul>
+<li><strong>Language &amp; build:</strong> TypeScript source compiled into a Node bundle with Rollup, built on the Elgato Stream Deck SDK (v2), targeting Node.js 20.</li>
+<li><strong>API integration:</strong> talks to the Rhombus API for camera media URIs, door access control, and audio playback, using header-based token authentication.</li>
+<li><strong>Real-time state:</strong> door status via periodic polling; audio via WebSocket connection monitoring; per-device state keyed on each action’s UUID.</li>
+<li><strong>Media handling:</strong> shell scripts drive MPV and Streamlink to play camera HLS streams outside the plugin process.</li>
+</ul>
+<p><strong>Tech stack:</strong> TypeScript · Node.js · Elgato Stream Deck SDK · Rollup · Shell · Rhombus API · WebSockets</p>
+</section>
+<section id="source" class="level2">
+<h2 class="anchored" data-anchor-id="source">Source</h2>
+<p>Full source, build configuration, and setup instructions are on GitHub: <a href="https://github.com/Muizzzzz/rhombus-streamdeck">github.com/Muizzzzz/rhombus-streamdeck</a>.</p>
 
 
 </section>
-</main></div>
-</div>
- <!-- /main -->
+
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
     const isCodeAnnotation = (el) => {
       for (const clz of el.classList) {
         if (clz.startsWith('code-annotation-')) {                     

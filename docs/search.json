@@ -221,6 +221,41 @@
     "href": "allin1_project.html#documentation-source",
     "title": "R Package: allin1",
     "section": "Documentation & source",
-    "text": "Documentation & source\nThe complete function reference, argument details, and a longer vignette live on the package website. The full source — including the function definitions in R/, unit tests in tests/, and the documentation — is on GitHub.\n\nPackage website: adc-405-s26.github.io/allin1\nSource code: github.com/ADC-405-S26/allin1"
+    "text": "Documentation & source\nThe complete function reference, argument details, and a longer vignette live on the package website. The full source, including the function definitions in R/, unit tests in tests/, and the documentation, is on GitHub.\n\nPackage website: adc-405-s26.github.io/allin1\nSource code: github.com/ADC-405-S26/allin1"
+  },
+  {
+    "objectID": "rhombus_project.html",
+    "href": "rhombus_project.html",
+    "title": "Rhombus StreamDeck Plugin",
+    "section": "",
+    "text": "A project done during my internship with Rhombus Systems from June 2025 - August 2025. Source on GitHub."
+  },
+  {
+    "objectID": "rhombus_project.html#overview",
+    "href": "rhombus_project.html#overview",
+    "title": "Rhombus StreamDeck Plugin",
+    "section": "Overview",
+    "text": "Overview\nrhombus-streamdeck is a plugin I built that turns the physical buttons of an Elgato Stream Deck into live controls for a Rhombus security system. A single button press can start a camera stream, unlock an access-controlled door, or play audio through a gateway. Each button shows its real-time state right on the key itself.\nIt’s a systems-integration project: a hardware-peripheral SDK on one side, the Rhombus API on the other, and real-time state tracking tying them together, written mostly in TypeScript with supporting shell scripts."
+  },
+  {
+    "objectID": "rhombus_project.html#what-it-does",
+    "href": "rhombus_project.html#what-it-does",
+    "title": "Rhombus StreamDeck Plugin",
+    "section": "What it does",
+    "text": "What it does\n\nCamera control\nToggle a live camera feed on or off with one button. The plugin pulls the camera’s HLS stream from the Rhombus API and opens it in the MPV player via Streamlink, with the button showing an on/off (green/red) state indicator.\n\n\nDoor lock control\nSend an unlock command to a Rhombus access-controlled door from a button press. The button polls lock status every few seconds and reflects it visually, red for locked, green for unlocked, so the current state is always visible at a glance.\n\n\nAudio gateway control\nStart and stop audio playback through a Rhombus audio gateway, with the connection status tracked live over a WebSocket and surfaced on the button."
+  },
+  {
+    "objectID": "rhombus_project.html#how-its-built",
+    "href": "rhombus_project.html#how-its-built",
+    "title": "Rhombus StreamDeck Plugin",
+    "section": "How it’s built",
+    "text": "How it’s built\n\nLanguage & build: TypeScript source compiled into a Node bundle with Rollup, built on the Elgato Stream Deck SDK (v2), targeting Node.js 20.\nAPI integration: talks to the Rhombus API for camera media URIs, door access control, and audio playback, using header-based token authentication.\nReal-time state: door status via periodic polling; audio via WebSocket connection monitoring; per-device state keyed on each action’s UUID.\nMedia handling: shell scripts drive MPV and Streamlink to play camera HLS streams outside the plugin process.\n\nTech stack: TypeScript · Node.js · Elgato Stream Deck SDK · Rollup · Shell · Rhombus API · WebSockets"
+  },
+  {
+    "objectID": "rhombus_project.html#source",
+    "href": "rhombus_project.html#source",
+    "title": "Rhombus StreamDeck Plugin",
+    "section": "Source",
+    "text": "Source\nFull source, build configuration, and setup instructions are on GitHub: github.com/Muizzzzz/rhombus-streamdeck."
   }
 ]

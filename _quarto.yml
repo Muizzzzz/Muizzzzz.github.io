@@ -16,6 +16,8 @@ website:
             text: Text Analysis
           - href: allin1_project.qmd
             text: R Package (allin1)
+          - href: rhombus_project.qmd
+            text: Rhombus StreamDeck Plugin
 
 format:
   html:
