@@ -284,14 +284,14 @@
     "href": "other_side.html",
     "title": "My Other Side",
     "section": "",
-    "text": "When I’m not working with data or code, I’m usually deep in a game or an anime.\nVideo games are my biggest hobby, Pokémon above all, which is exactly why it keeps turning up in my work here (both the SQL database and the text analysis are built on Pokémon data). Lately I’ve been getting into Persona, a JRPG that scratches a similar itch and has quickly become a favorite.\nOn the anime side, One Piece is my all-time favorite, if you want to talk about it (or argue about it), I’m always up for it.\nPart of why I like building projects around these interests is that it lets me explore data science on my own terms, working with the kind of data most people never touch. It keeps the learning fun, and the fun keeps me learning."
+    "text": "When I’m not working with data or code, I’m usually deep in a game or an anime.\nVideo games are my biggest hobby, Pokémon above all, which is exactly why it keeps turning up in my work here (both the SQL database and the text analysis are built on Pokémon data). Lately I’ve been getting into Persona, a JRPG that scratches a similar itch and has quickly become a favorite.\nOn the anime side, One Piece is my all-time favorite, if you want to talk about it (or argue about it), I’m always up for it.\n\n\n\n\nMy setup."
   },
   {
     "objectID": "other_side.html#beyond-class",
     "href": "other_side.html#beyond-class",
     "title": "My Other Side",
     "section": "",
-    "text": "When I’m not working with data or code, I’m usually deep in a game or an anime.\nVideo games are my biggest hobby, Pokémon above all, which is exactly why it keeps turning up in my work here (both the SQL database and the text analysis are built on Pokémon data). Lately I’ve been getting into Persona, a JRPG that scratches a similar itch and has quickly become a favorite.\nOn the anime side, One Piece is my all-time favorite, if you want to talk about it (or argue about it), I’m always up for it.\nPart of why I like building projects around these interests is that it lets me explore data science on my own terms, working with the kind of data most people never touch. It keeps the learning fun, and the fun keeps me learning."
+    "text": "When I’m not working with data or code, I’m usually deep in a game or an anime.\nVideo games are my biggest hobby, Pokémon above all, which is exactly why it keeps turning up in my work here (both the SQL database and the text analysis are built on Pokémon data). Lately I’ve been getting into Persona, a JRPG that scratches a similar itch and has quickly become a favorite.\nOn the anime side, One Piece is my all-time favorite, if you want to talk about it (or argue about it), I’m always up for it.\n\n\n\n\nMy setup."
   },
   {
     "objectID": "poster_project.html",
@@ -362,5 +362,12 @@
     "title": "Presentation: Visualizing Data in 3D with rayshader",
     "section": "Tools",
     "text": "Tools\nR · Quarto · rayshader · ggplot2"
+  },
+  {
+    "objectID": "other_side.html#currently",
+    "href": "other_side.html#currently",
+    "title": "My Other Side",
+    "section": "Currently",
+    "text": "Currently\n\nPlaying: Persona 4 Golden\nWatching: Full Metal Alchemist Brotherhood\nAlways down for: a Pokémon competitive-team discussion\n\nPart of why I like building projects around these interests is that it lets me explore data science on my own terms, working with the kind of data most people never touch. It keeps the learning fun, and the fun keeps me learning."
   }
 ]
