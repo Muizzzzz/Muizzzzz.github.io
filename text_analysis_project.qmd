@@ -1,5 +1,5 @@
 ---
-title: "text_analysis_project"
+title: "Text Analysis Project"
 ---
 
 sooooon

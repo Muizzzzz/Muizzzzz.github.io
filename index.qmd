@@ -29,10 +29,7 @@ Java (FX/FXML), Python, C++, SQL, JavaScript, HTML/CSS, R, TypeScript
 
 ## Beyond Class
 
-to be filled
+I love playing video games (especially Pokemon as you'll see with my projects) and watching anime. I've started playing Persona which is a JRPG similar to Pokemon and it has piqued my interest quite a bit. My favorite anime is One Piece (contact me if you want to talk about this stuff, I'm open to it).
 
+I feel like making projects related to those interests allows me to explore the field of data science in my own fun way and gain experience with working on data that people usually don't work on. 
 
-::: {#landing-icons}
-[{{< fa brands github title="github" >}}](https://github.com/Muizzzzz/Muizzzzz.github.io){target="_blank"} &nbsp;
-[{{< fa brands linkedin title="linkedin" >}}](https://www.linkedin.com/in/muizz-aman-khan-1a8535312/){target="_blank"} &nbsp; [{{< fa envelope title="envelope" >}}](khanm@lawrence.edu) 
-:::

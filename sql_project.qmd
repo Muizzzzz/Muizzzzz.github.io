@@ -1,9 +1,356 @@
 ---
-title: "sql_project"
+title: "SQL Project: Competitive Pokémon Database"
+format:
+  html:
+    df-print: paged
+    code-fold: true
+    code-tools: true
+toc: true
+toc-depth: 2
 ---
 
-*Team project (Team 3), ADC 405. Full code & data: [GitHub repo](https://github.com/ADC-405-S26/Project_2_SQL_Team_3).*
+*Team project with Martin Tran for STAT 405, Advanced Data Computing. Full code and data on [GitHub](https://github.com/ADC-405-S26/Project_2_SQL_Team_3).*
 
 ## Overview
 
-to be filled
+Using SQL (run through a local **duckdb** database in R), we built a relational
+database from three competitive-Pokémon datasets — `pokemon`, `moves`, and
+`pokemon_info` — covering every Pokémon up to Generation 8, then queried it to
+answer questions about competitive tiers, typings, base stats, and move power.
+
+One result we liked: even though *Normal* has the single highest-powered move in
+the game, *Fire* moves have the highest **median** power — Fire is consistently
+strong, while Normal's average is dragged down by many weak moves.
+
+Code on this page is collapsed by default — click **► Code** on any block to
+see the SQL or R behind a result. AI tools were used as a coding aid during
+development and are documented under [Sources & tools](#sources-tools).
+
+## Database setup
+
+Rather than letting duckdb infer the schema automatically, we define each table
+explicitly — typing every field, setting defaults, and assigning a primary key —
+then load the CSVs with `COPY`. This makes the structure of the data deliberate
+and reproducible.
+
+The full construction is in the dropdown below.
+
+::: {.callout-note collapse="true"}
+## Show database setup code (schemas + loading)
+
+```{r}
+#| message: false
+#| warning: false
+#| code-fold: false
+
+library(tidyverse)
+library(duckdb)    # build a duckdb database locally
+
+con_pokemon <- DBI::dbConnect(duckdb::duckdb(), dbdir = "pokemon_db")
+```
+
+```{sql connection=con_pokemon}
+--| code-fold: false
+USE pokemon_db;
+```
+
+```{sql connection=con_pokemon}
+--| code-fold: false
+DROP TABLE IF EXISTS pokemon;
+```
+
+```{sql connection=con_pokemon}
+--| code-fold: false
+CREATE TABLE pokemon (
+  name       VARCHAR(255) NOT NULL DEFAULT ' ',  -- competitive name; unique, so primary key
+  hp         SMALLINT NOT NULL DEFAULT 0,         -- base stats top out ~255, SMALLINT is plenty
+  atk        SMALLINT NOT NULL DEFAULT 0,
+  def        SMALLINT NOT NULL DEFAULT 0,
+  spa        SMALLINT NOT NULL DEFAULT 0,
+  spd        SMALLINT NOT NULL DEFAULT 0,
+  spe        SMALLINT NOT NULL DEFAULT 0,
+  weight     DOUBLE NOT NULL DEFAULT 0,           -- kg, has decimals -> DOUBLE
+  height     DOUBLE NOT NULL DEFAULT 0,           -- m, has decimals -> DOUBLE
+  formats    VARCHAR(255),                        -- competitive tier (OU, UU, NFE, LC...)
+  generation VARCHAR(255),                        -- game generation code (RB, etc.)
+  PRIMARY KEY (name)
+);
+```
+
+```{sql connection=con_pokemon}
+--| code-fold: false
+COPY pokemon FROM 'pokemon_df.csv' (FORMAT CSV, HEADER, NULL 'NA');
+```
+
+```{sql connection=con_pokemon}
+--| code-fold: false
+DROP TABLE IF EXISTS moves;
+```
+
+```{sql connection=con_pokemon}
+--| code-fold: false
+CREATE TABLE moves (
+  name        VARCHAR(255) NOT NULL DEFAULT ' ',  -- move name; unique, so primary key
+  category    VARCHAR(255),                        -- Physical / Special / Non-Damaging
+  power       SMALLINT NOT NULL DEFAULT 0,         -- base power; 0 for status moves
+  accuracy    SMALLINT NOT NULL DEFAULT 0,         -- 0-100
+  priority    SMALLINT NOT NULL DEFAULT 0,         -- can be negative; SMALLINT is signed
+  pp          SMALLINT NOT NULL DEFAULT 0,         -- power points
+  description VARCHAR(255),                         -- free-text effect
+  type        VARCHAR(255),                         -- elemental type
+  PRIMARY KEY (name)
+);
+```
+
+```{sql connection=con_pokemon}
+--| code-fold: false
+COPY moves FROM 'moves_df.csv' (FORMAT CSV, HEADER, NULL 'NA');
+```
+
+```{sql connection=con_pokemon}
+--| code-fold: false
+DROP TABLE IF EXISTS pokemon_info;
+```
+
+```{sql connection=con_pokemon}
+--| code-fold: false
+CREATE TABLE pokemon_info (
+  id              INTEGER NOT NULL DEFAULT 0,        -- unique row id, so primary key
+  pokemon         VARCHAR(255) NOT NULL DEFAULT ' ', -- name; links to pokemon.name
+  species_id      INTEGER NOT NULL DEFAULT 0,
+  height          DOUBLE NOT NULL DEFAULT 0,
+  weight          DOUBLE NOT NULL DEFAULT 0,
+  base_experience SMALLINT NOT NULL DEFAULT 0,
+  type_1          VARCHAR(255),                      -- primary type
+  type_2          VARCHAR(255) DEFAULT NULL,         -- single-type pokemon have none -> NULL
+  hp              SMALLINT NOT NULL DEFAULT 0,
+  attack          SMALLINT NOT NULL DEFAULT 0,
+  defense         SMALLINT NOT NULL DEFAULT 0,
+  special_attack  SMALLINT NOT NULL DEFAULT 0,
+  special_defense SMALLINT NOT NULL DEFAULT 0,
+  speed           SMALLINT NOT NULL DEFAULT 0,
+  color_1         VARCHAR(255),                      -- hex colour
+  color_2         VARCHAR(255) DEFAULT NULL,         -- optional, so nullable
+  color_f         VARCHAR(255) DEFAULT NULL,
+  egg_group_1     VARCHAR(255),
+  egg_group_2     VARCHAR(255) DEFAULT NULL,         -- many have a single egg group -> NULL
+  url_icon        VARCHAR(255),
+  generation_id   SMALLINT DEFAULT NULL,             -- 1-8; regional forms are NULL
+  url_image       VARCHAR(255),
+  PRIMARY KEY (id)
+);
+```
+
+```{sql connection=con_pokemon}
+--| code-fold: false
+COPY pokemon_info FROM 'pokemon_info_df.csv' (FORMAT CSV, HEADER, NULL 'NA');
+```
+
+A quick check that all three tables built and loaded correctly:
+
+```{sql connection=con_pokemon}
+--| code-fold: false
+SHOW TABLES;
+```
+
+```{sql connection=con_pokemon}
+--| code-fold: false
+SELECT * FROM pokemon LIMIT 5;
+```
+:::
+
+## Querying the database
+
+With the database in place, we can answer questions that would be tedious to look
+up by hand, those being filtering Pokémon by tier, typing, stats, and more. Each query below runs directly against the database.
+
+### The heaviest Pokémon in the OU tier
+
+```{sql connection=con_pokemon}
+-- heaviest pokemon in the OU (overused) competitive format (Muizz)
+SELECT name, weight, formats
+FROM pokemon
+WHERE formats = 'OU'
+ORDER BY weight DESC
+LIMIT 1;
+```
+
+*The single heaviest Pokémon among those competing in the top "OverUsed" tier.*
+
+### Strongest Pokémon in OU, by total base stats
+
+```{sql connection=con_pokemon}
+-- base stat total of pokemon in OU tier, highest to lowest (Martin)
+SELECT pokemon, base_experience, formats, (pokemon_info.hp + pokemon_info.attack + pokemon_info.defense + pokemon_info.special_attack + pokemon_info.special_defense + pokemon_info.speed) AS total
+FROM pokemon_info
+JOIN pokemon ON pokemon.name = pokemon_info.pokemon
+WHERE formats = 'OU'
+ORDER BY total DESC
+LIMIT 10;
+```
+
+*Joins the two tables and sums the six base stats on the fly to rank the most
+statistically powerful Pokémon in the OU tier.*
+
+### The tallest Pokémon in each generation
+
+```{sql connection=con_pokemon}
+-- tallest pokemon in each generation (Muizz)
+-- Uses a correlated subquery: for each row, compare its height to the MAX height
+-- within that same generation, keeping only the matches.
+SELECT generation_id, pokemon, height
+FROM pokemon_info AS p1
+WHERE height = (
+        SELECT MAX(height)
+        FROM pokemon_info AS p2
+        WHERE p1.generation_id = p2.generation_id
+      )
+  AND generation_id IS NOT NULL;   -- regional forms have no listed generation (real NULLs)
+```
+
+*A correlated subquery returns both the Pokémon name and its generation in one
+result which is something a simple `GROUP BY MAX(height)` can't do on its own.*
+
+### Poison-type Pokémon in the UU tier
+
+```{sql connection=con_pokemon}
+-- poison types in the UU (underused) format (Muizz)
+SELECT pokemon, type_1, type_2, pokemon.formats
+FROM pokemon_info
+JOIN pokemon ON pokemon_info.pokemon = pokemon.name
+WHERE (type_1 = 'poison' OR type_2 = 'poison')
+  AND pokemon.formats = 'UU';
+```
+
+*Checks both type slots so dual-typed Poison Pokémon aren't missed.*
+
+### Monster egg-group Pokémon, by generation (NFE / LC tiers)
+
+```{sql connection=con_pokemon}
+-- count of NFE (not fully evolved) or LC (little cup) Monster egg-group pokemon
+-- per generation (Muizz)
+SELECT generation_id AS gen, COUNT(*) AS num_pokemon
+FROM pokemon_info
+JOIN pokemon ON pokemon_info.pokemon = pokemon.name
+WHERE (pokemon.formats = 'NFE' OR pokemon.formats = 'LC')
+  AND (egg_group_1 = 'monster' OR egg_group_2 = 'monster')
+GROUP BY gen;
+```
+
+*Combines a join, multiple tier filters, and a grouped count in one query.*
+
+### Quick stats
+
+A few smaller lookups against the same database.
+
+How many moves have non-neutral priority?
+
+```{sql connection=con_pokemon}
+-- number of moves with priority other than 0 (Martin)
+SELECT COUNT(*) AS num_rows
+FROM moves
+WHERE priority <> 0;
+```
+
+The ten lightest Pokémon:
+
+```{sql connection=con_pokemon}
+-- top 10 lightest pokemon (Martin)
+SELECT pokemon, weight
+FROM pokemon_info
+ORDER BY weight
+LIMIT 10;
+```
+
+Count of Pokémon by primary type, most common first:
+
+```{sql connection=con_pokemon}
+-- number of pokemon per primary type, highest to lowest (Martin)
+SELECT type_1, COUNT(*) AS type_count
+FROM pokemon_info
+GROUP BY type_1
+ORDER BY type_count DESC;
+```
+
+## Visualizations
+
+### Average base-stat total by generation
+
+Which generation introduced the strongest Pokémon on average? We average the six
+base stats across every Pokémon in each generation.
+
+```{sql connection=con_pokemon}
+--| code-summary: "SQL: average stat total per generation"
+SELECT generation_id,
+       AVG(hp + attack + defense + special_attack + special_defense + speed) AS total
+FROM pokemon_info
+WHERE generation_id IS NOT NULL   -- exclude regional forms with no listed generation
+GROUP BY generation_id;
+```
+
+```{r}
+#| code-summary: "Plot: average stat total per generation"
+#| message: false
+#| warning: false
+
+generation_plot <- DBI::dbGetQuery(con_pokemon,
+  "SELECT generation_id,
+          AVG(hp + attack + defense + special_attack + special_defense + speed) AS total
+   FROM pokemon_info
+   WHERE generation_id IS NOT NULL
+   GROUP BY generation_id;"
+)
+
+ggplot(generation_plot, aes(x = generation_id, y = total)) +
+  geom_col(aes(fill = total)) +
+  geom_text(aes(label = round(total)), nudge_y = 10) +
+  scale_fill_gradient(low = "white", high = "red") +
+  labs(x = "Generation", y = "Average Stat Total",
+       title = "Average Base Stats by Generation") +
+  theme(legend.position = "none")
+```
+
+*Average base-stat totals stay fairly close across generations, with later
+generations trending slightly higher.*
+
+### Move power distribution by type
+
+How hard does each move type hit? We look at the spread of base power per type,
+excluding status moves (which have 0 power).
+
+```{sql connection=con_pokemon}
+--| code-summary: "SQL: damaging-move power by type"
+SELECT type, power
+FROM moves
+WHERE power > 1   -- drop status / non-damaging moves
+ORDER BY power DESC;
+```
+
+```{r}
+#| code-summary: "Plot: move power distribution by type"
+#| message: false
+#| warning: false
+
+type_plot <- DBI::dbGetQuery(con_pokemon,"SELECT type, power FROM moves WHERE power > 1")
+
+ggplot(type_plot, aes(x = reorder(type, power, FUN = median), y = power, fill = type)) +
+  geom_boxplot(alpha = 0.6) +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45), legend.position = "none") +
+  labs(title = "Distribution of Move Power by Type",
+       x = "Move Type", y = "Base Power")
+```
+
+*Ordered by median power: even though Normal has the single highest-powered move,
+its median is near the bottom — while Fire is consistently high, with the top median.*
+
+```{r}
+#| echo: false
+DBI::dbDisconnect(con_pokemon, shutdown = TRUE)
+```
+
+## Sources & tools
+
+- Competitive Pokémon tier dataset (`pokemon_df`, `moves_df`) — [Kaggle](https://www.kaggle.com/datasets/varlawend/competitive-pokmon-tier-dataset)
+- Pokémon info dataset (`pokemon_info_df`) — [TidyTuesday, 2025-04-01](https://github.com/rfordatascience/tidytuesday/blob/main/data/2025/2025-04-01)
+- AI tools (LLM) were used as an aid for dataset editing during development.

@@ -25,34 +25,111 @@
     "href": "index.html#beyond-class",
     "title": "Muizz Aman Khan",
     "section": "Beyond Class",
-    "text": "Beyond Class\nto be filled"
+    "text": "Beyond Class\nI love playing video games (especially Pokemon as you’ll see with my projects) and watching anime. I’ve started playing Persona which is a JRPG similar to Pokemon and it has piqued my interest quite a bit. My favorite anime is One Piece (contact me if you want to talk about this stuff, I’m open to it).\nI feel like making projects related to those interests allows me to explore the field of data science in my own fun way and gain experience with working on data that people usually don’t work on."
   },
   {
     "objectID": "sql_project.html",
     "href": "sql_project.html",
-    "title": "sql_project",
+    "title": "SQL Project: Competitive Pokémon Database",
     "section": "",
-    "text": "Team project (Team 3), ADC 405. Full code & data: GitHub repo."
+    "text": "Team project with Martin for ADC 405. Full code and data on GitHub."
   },
   {
     "objectID": "sql_project.html#overview",
     "href": "sql_project.html#overview",
-    "title": "sql_project",
+    "title": "SQL Project: Competitive Pokémon Database",
     "section": "Overview",
-    "text": "Overview\nto be filled"
+    "text": "Overview\nUsing SQL (run through a local duckdb database in R), we built a relational database from three competitive-Pokémon datasets — pokemon, moves, and pokemon_info — covering every Pokémon up to Generation 8, then queried it to answer questions about competitive tiers, typings, base stats, and move power.\nOne result we liked: even though Normal has the single highest-powered move in the game, Fire moves have the highest median power — Fire is consistently strong, while Normal’s average is dragged down by many weak moves.\nCode on this page is collapsed by default — click ► Code on any block to see the SQL or R behind a result. AI tools were used as a coding aid during development and are documented under Sources & tools."
   },
   {
     "objectID": "allin1_project.html",
     "href": "allin1_project.html",
-    "title": "allin1_project",
+    "title": "R Package: allin1",
     "section": "",
     "text": "soooooon"
   },
   {
     "objectID": "text_analysis_project.html",
     "href": "text_analysis_project.html",
-    "title": "text_analysis_project",
+    "title": "Text Analysis Project",
     "section": "",
     "text": "sooooon"
+  },
+  {
+    "objectID": "sql_project.html#setup",
+    "href": "sql_project.html#setup",
+    "title": "SQL Project",
+    "section": "Setup",
+    "text": "Setup\n[packages + connection chunk]"
+  },
+  {
+    "objectID": "sql_project.html#question-1-phrased-as-a-real-question",
+    "href": "sql_project.html#question-1-phrased-as-a-real-question",
+    "title": "SQL Project",
+    "section": "[Question 1 — phrased as a real question]",
+    "text": "[Question 1 — phrased as a real question]\n[1 line on what you’re asking → the SQL chunk → the result, then 1 line on what it shows]"
+  },
+  {
+    "objectID": "sql_project.html#question-2",
+    "href": "sql_project.html#question-2",
+    "title": "SQL Project",
+    "section": "[Question 2 …]",
+    "text": "[Question 2 …]"
+  },
+  {
+    "objectID": "sql_project.html#takeaways",
+    "href": "sql_project.html#takeaways",
+    "title": "SQL Project",
+    "section": "Takeaways",
+    "text": "Takeaways\n[2–3 sentences: what you found, and what you’d do next.]"
+  },
+  {
+    "objectID": "sql_project.html#database-setup",
+    "href": "sql_project.html#database-setup",
+    "title": "SQL Project: Competitive Pokémon Database",
+    "section": "Database setup",
+    "text": "Database setup\nRather than letting duckdb infer the schema automatically, we define each table explicitly — typing every field, setting defaults, and assigning a primary key — then load the CSVs with COPY. This makes the structure of the data deliberate and reproducible.\nThe full construction is in the dropdown below.\n\n\n\n\n\n\nNoteShow database setup code (schemas + loading)\n\n\n\n\n\n\nlibrary(tidyverse)\nlibrary(sqldf)     # run SQL against R data frames (used in the plots)\nlibrary(duckdb)    # build a duckdb database locally\n\ncon_pokemon &lt;- DBI::dbConnect(duckdb::duckdb(), dbdir = \"pokemon_db\")\n\n\nUSE pokemon_db;\n\n\nDROP TABLE IF EXISTS pokemon;\n\n\nCREATE TABLE pokemon (\n  name       VARCHAR(255) NOT NULL DEFAULT ' ',  -- competitive name; unique, so primary key\n  hp         SMALLINT NOT NULL DEFAULT 0,         -- base stats top out ~255, SMALLINT is plenty\n  atk        SMALLINT NOT NULL DEFAULT 0,\n  def        SMALLINT NOT NULL DEFAULT 0,\n  spa        SMALLINT NOT NULL DEFAULT 0,\n  spd        SMALLINT NOT NULL DEFAULT 0,\n  spe        SMALLINT NOT NULL DEFAULT 0,\n  weight     DOUBLE NOT NULL DEFAULT 0,           -- kg, has decimals -&gt; DOUBLE\n  height     DOUBLE NOT NULL DEFAULT 0,           -- m, has decimals -&gt; DOUBLE\n  formats    VARCHAR(255),                        -- competitive tier (OU, UU, NFE, LC...)\n  generation VARCHAR(255),                        -- game generation code (RB, etc.)\n  PRIMARY KEY (name)\n);\n\n\nCOPY pokemon FROM 'pokemon_df.csv' (FORMAT CSV, HEADER, NULL 'NA');\n\n\nDROP TABLE IF EXISTS moves;\n\n\nCREATE TABLE moves (\n  name        VARCHAR(255) NOT NULL DEFAULT ' ',  -- move name; unique, so primary key\n  category    VARCHAR(255),                        -- Physical / Special / Non-Damaging\n  power       SMALLINT NOT NULL DEFAULT 0,         -- base power; 0 for status moves\n  accuracy    SMALLINT NOT NULL DEFAULT 0,         -- 0-100\n  priority    SMALLINT NOT NULL DEFAULT 0,         -- can be negative; SMALLINT is signed\n  pp          SMALLINT NOT NULL DEFAULT 0,         -- power points\n  description VARCHAR(255),                         -- free-text effect\n  type        VARCHAR(255),                         -- elemental type\n  PRIMARY KEY (name)\n);\n\n\nCOPY moves FROM 'moves_df.csv' (FORMAT CSV, HEADER, NULL 'NA');\n\n\nDROP TABLE IF EXISTS pokemon_info;\n\n\nCREATE TABLE pokemon_info (\n  id              INTEGER NOT NULL DEFAULT 0,        -- unique row id, so primary key\n  pokemon         VARCHAR(255) NOT NULL DEFAULT ' ', -- name; links to pokemon.name\n  species_id      INTEGER NOT NULL DEFAULT 0,\n  height          DOUBLE NOT NULL DEFAULT 0,\n  weight          DOUBLE NOT NULL DEFAULT 0,\n  base_experience SMALLINT NOT NULL DEFAULT 0,\n  type_1          VARCHAR(255),                      -- primary type\n  type_2          VARCHAR(255) DEFAULT NULL,         -- single-type pokemon have none -&gt; NULL\n  hp              SMALLINT NOT NULL DEFAULT 0,\n  attack          SMALLINT NOT NULL DEFAULT 0,\n  defense         SMALLINT NOT NULL DEFAULT 0,\n  special_attack  SMALLINT NOT NULL DEFAULT 0,\n  special_defense SMALLINT NOT NULL DEFAULT 0,\n  speed           SMALLINT NOT NULL DEFAULT 0,\n  color_1         VARCHAR(255),                      -- hex colour\n  color_2         VARCHAR(255) DEFAULT NULL,         -- optional, so nullable\n  color_f         VARCHAR(255) DEFAULT NULL,\n  egg_group_1     VARCHAR(255),\n  egg_group_2     VARCHAR(255) DEFAULT NULL,         -- many have a single egg group -&gt; NULL\n  url_icon        VARCHAR(255),\n  generation_id   SMALLINT DEFAULT NULL,             -- 1-8; regional forms are NULL\n  url_image       VARCHAR(255),\n  PRIMARY KEY (id)\n);\n\n\nCOPY pokemon_info FROM 'pokemon_info_df.csv' (FORMAT CSV, HEADER, NULL 'NA');\n\nA quick check that all three tables built and loaded correctly:\n\nSHOW TABLES;\n\n\n3 records\n\n\nname\n\n\n\n\nmoves\n\n\npokemon\n\n\npokemon_info\n\n\n\n\n\n\nSELECT * FROM pokemon LIMIT 5;\n\n\n5 records\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nname\nhp\natk\ndef\nspa\nspd\nspe\nweight\nheight\nformats\ngeneration\n\n\n\n\nBulbasaur\n45\n49\n49\n65\n65\n45\n6.9\n0.7\nLC\nRB\n\n\nIvysaur\n60\n62\n63\n80\n80\n60\n13.0\n1.0\nNFE\nRB\n\n\nVenusaur\n80\n82\n83\n100\n100\n80\n100.0\n2.0\nRUBL\nRB\n\n\nCharmander\n39\n52\n43\n60\n50\n65\n8.5\n0.6\nLC\nRB\n\n\nCharmeleon\n58\n64\n58\n80\n65\n80\n19.0\n1.1\nNFE\nRB"
+  },
+  {
+    "objectID": "sql_project.html#pokemon",
+    "href": "sql_project.html#pokemon",
+    "title": "SQL Project: Competitive Pokémon Database",
+    "section": "pokemon",
+    "text": "pokemon\n\n-- To make sure no other outdated tables exist in the database, we drop then create the tables\nDROP TABLE IF EXISTS pokemon;\n\n\nCREATE TABLE pokemon (\n  name       VARCHAR(255) NOT NULL DEFAULT ' ',  -- competitive name; unique, so primary key\n  hp         SMALLINT NOT NULL DEFAULT 0,         -- base stats top out ~255, SMALLINT \n  atk        SMALLINT NOT NULL DEFAULT 0,\n  def        SMALLINT NOT NULL DEFAULT 0,\n  spa        SMALLINT NOT NULL DEFAULT 0,\n  spd        SMALLINT NOT NULL DEFAULT 0,\n  spe        SMALLINT NOT NULL DEFAULT 0,\n  weight     DOUBLE NOT NULL DEFAULT 0,           -- kg, has decimals -&gt; DOUBLE\n  height     DOUBLE NOT NULL DEFAULT 0,           -- m, has decimals -&gt; DOUBLE\n  formats    VARCHAR(255),                        -- competitive tier (OU, UU, NFE, LC...)\n  generation VARCHAR(255),                        -- game generation code (RB, etc.)\n  PRIMARY KEY (name)\n);\n\n\nCOPY pokemon FROM 'pokemon_df.csv' (FORMAT CSV, HEADER, NULL 'NA');"
+  },
+  {
+    "objectID": "sql_project.html#moves",
+    "href": "sql_project.html#moves",
+    "title": "SQL Project: Competitive Pokémon Database",
+    "section": "moves",
+    "text": "moves\n\nDROP TABLE IF EXISTS moves;\n\n\nCREATE TABLE moves (\n  name        VARCHAR(255) NOT NULL DEFAULT ' ',  -- move name; unique, so primary key\n  category    VARCHAR(255),                        -- Physical / Special / Non-Damaging\n  power       SMALLINT NOT NULL DEFAULT 0,         -- base power; 0 for status moves\n  accuracy    SMALLINT NOT NULL DEFAULT 0,         -- 0-100\n  priority    SMALLINT NOT NULL DEFAULT 0,         -- can be negative, SMALLINT is signed\n  pp          SMALLINT NOT NULL DEFAULT 0,         -- power points\n  description VARCHAR(255),                         -- free-text effect\n  type        VARCHAR(255),                         -- elemental type\n  PRIMARY KEY (name)\n);\n\n\nCOPY moves FROM 'moves_df.csv' (FORMAT CSV, HEADER, NULL 'NA');"
+  },
+  {
+    "objectID": "sql_project.html#pokemon_info",
+    "href": "sql_project.html#pokemon_info",
+    "title": "SQL Project: Competitive Pokémon Database",
+    "section": "pokemon_info",
+    "text": "pokemon_info\n\nDROP TABLE IF EXISTS pokemon_info;\n\n\nCREATE TABLE pokemon_info (\n  id              INTEGER NOT NULL DEFAULT 0,        -- unique row id, so primary key\n  pokemon         VARCHAR(255) NOT NULL DEFAULT ' ', -- name; links to pokemon.name\n  species_id      INTEGER NOT NULL DEFAULT 0,\n  height          DOUBLE NOT NULL DEFAULT 0,\n  weight          DOUBLE NOT NULL DEFAULT 0,\n  base_experience SMALLINT NOT NULL DEFAULT 0,\n  type_1          VARCHAR(255),                      -- primary type\n  type_2          VARCHAR(255) DEFAULT NULL,         -- single-type pokemon have none -&gt; NULL\n  hp              SMALLINT NOT NULL DEFAULT 0,\n  attack          SMALLINT NOT NULL DEFAULT 0,\n  defense         SMALLINT NOT NULL DEFAULT 0,\n  special_attack  SMALLINT NOT NULL DEFAULT 0,\n  special_defense SMALLINT NOT NULL DEFAULT 0,\n  speed           SMALLINT NOT NULL DEFAULT 0,\n  color_1         VARCHAR(255),                      -- hex colour\n  color_2         VARCHAR(255) DEFAULT NULL,         -- optional, so nullable\n  color_f         VARCHAR(255) DEFAULT NULL,\n  egg_group_1     VARCHAR(255),\n  egg_group_2     VARCHAR(255) DEFAULT NULL,         -- many have a single egg group -&gt; NULL\n  url_icon        VARCHAR(255),\n  generation_id   SMALLINT DEFAULT NULL,             -- 1-8; regional forms are NULL\n  url_image       VARCHAR(255),\n  PRIMARY KEY (id)\n);\n\n\nCOPY pokemon_info FROM 'pokemon_info_df.csv' (FORMAT CSV, HEADER, NULL 'NA');"
+  },
+  {
+    "objectID": "sql_project.html#querying-the-database",
+    "href": "sql_project.html#querying-the-database",
+    "title": "SQL Project: Competitive Pokémon Database",
+    "section": "Querying the database",
+    "text": "Querying the database\nWith the database in place, we can answer questions that would be tedious to look up by hand — filtering Pokémon by tier, typing, stats, and more. Each query below runs directly against the database.\n\nThe heaviest Pokémon in the OU tier\n\n\nCode\n-- heaviest pokemon in the OU (overused) competitive format (Muizz)\nSELECT name, weight, formats\nFROM pokemon\nWHERE formats = 'OU'\nORDER BY weight DESC\nLIMIT 1;\n\n\n\n1 records\n\n\nname\nweight\nformats\n\n\n\n\nMelmetal\n800\nOU\n\n\n\n\n\nThe single heaviest Pokémon among those competing in the top “OverUsed” tier.\n\n\nStrongest Pokémon in OU, by total base stats\n\n\nCode\n-- base stat total of pokemon in OU tier, highest to lowest (Martin)\nSELECT pokemon, base_experience, formats, (pokemon_info.hp + pokemon_info.attack + pokemon_info.defense + pokemon_info.special_attack + pokemon_info.special_defense + pokemon_info.speed) AS total\nFROM pokemon_info\nJOIN pokemon ON pokemon.name = pokemon_info.pokemon\nWHERE formats = 'OU'\nORDER BY total DESC\nLIMIT 10;\n\n\n\nDisplaying records 1 - 10\n\n\npokemon\nbase_experience\nformats\ntotal\n\n\n\n\nKyurem\n297\nOU\n660\n\n\nZeraora\n270\nOU\n600\n\n\nDragonite\n270\nOU\n600\n\n\nHeatran\n270\nOU\n600\n\n\nTyranitar\n270\nOU\n600\n\n\nGarchomp\n270\nOU\n600\n\n\nHydreigon\n270\nOU\n600\n\n\nDragapult\n300\nOU\n600\n\n\nMelmetal\n270\nOU\n600\n\n\nZapdos\n261\nOU\n580\n\n\n\n\n\nJoins the two tables and sums the six base stats on the fly to rank the most statistically powerful Pokémon in the OU tier.\n\n\nThe tallest Pokémon in each generation\n\n\nCode\n-- tallest pokemon in each generation (Muizz)\n-- Uses a correlated subquery: for each row, compare its height to the MAX height\n-- within that same generation, keeping only the matches.\nSELECT generation_id, pokemon, height\nFROM pokemon_info AS p1\nWHERE height = (\n        SELECT MAX(height)\n        FROM pokemon_info AS p2\n        WHERE p1.generation_id = p2.generation_id\n      )\n  AND generation_id IS NOT NULL;   -- regional forms have no listed generation (real NULLs)\n\n\n\n8 records\n\n\ngeneration_id\npokemon\nheight\n\n\n\n\n1\nOnix\n8.8\n\n\n2\nSteelix\n9.2\n\n\n3\nWailord\n14.5\n\n\n4\nDialga\n5.4\n\n\n5\nSerperior\n3.3\n\n\n6\nYveltal\n5.8\n\n\n7\nCelesteela\n9.2\n\n\n8\nEternatus\n20.0\n\n\n\n\n\nA correlated subquery returns both the Pokémon name and its generation in one result — something a simple GROUP BY MAX(height) can’t do on its own.\n\n\nPoison-type Pokémon in the UU tier\n\n\nCode\n-- poison types in the UU (underused) format (Muizz)\nSELECT pokemon, type_1, type_2, pokemon.formats\nFROM pokemon_info\nJOIN pokemon ON pokemon_info.pokemon = pokemon.name\nWHERE (type_1 = 'poison' OR type_2 = 'poison')\n  AND pokemon.formats = 'UU';\n\n\n\n4 records\n\n\npokemon\ntype_1\ntype_2\nformats\n\n\n\n\nNidoqueen\npoison\nground\nUU\n\n\nTentacruel\nwater\npoison\nUU\n\n\nAmoonguss\ngrass\npoison\nUU\n\n\nNihilego\nrock\npoison\nUU\n\n\n\n\n\nChecks both type slots so dual-typed Poison Pokémon aren’t missed.\n\n\nMonster egg-group Pokémon, by generation (NFE / LC tiers)\n\n\nCode\n-- count of NFE (not fully evolved) or LC (little cup) Monster egg-group pokemon\n-- per generation (Muizz)\nSELECT generation_id AS gen, COUNT(*) AS num_pokemon\nFROM pokemon_info\nJOIN pokemon ON pokemon_info.pokemon = pokemon.name\nWHERE (pokemon.formats = 'NFE' OR pokemon.formats = 'LC')\n  AND (egg_group_1 = 'monster' OR egg_group_2 = 'monster')\nGROUP BY gen;\n\n\n\n8 records\n\n\ngen\nnum_pokemon\n\n\n\n\n1\n14\n\n\n2\n2\n\n\n3\n8\n\n\n4\n3\n\n\n5\n2\n\n\n6\n4\n\n\n7\n1\n\n\n8\n2\n\n\n\n\n\nCombines a join, multiple tier filters, and a grouped count in one query.\n\n\nQuick stats\nA few smaller lookups against the same database.\nHow many moves have non-neutral priority?\n\n\nCode\n-- number of moves with priority other than 0 (Martin)\nSELECT COUNT(*) AS num_rows\nFROM moves\nWHERE priority &lt;&gt; 0;\n\n\n\n1 records\n\n\nnum_rows\n\n\n\n\n44\n\n\n\n\n\nThe ten lightest Pokémon:\n\n\nCode\n-- top 10 lightest pokemon (Martin)\nSELECT pokemon, weight\nFROM pokemon_info\nORDER BY weight\nLIMIT 10;\n\n\n\nDisplaying records 1 - 10\n\n\npokemon\nweight\n\n\n\n\nGastly\n0.1\n\n\nHaunter\n0.1\n\n\nFlabebe\n0.1\n\n\nCosmog\n0.1\n\n\nKartana\n0.1\n\n\nSinistea\n0.1\n\n\nCutiefly\n0.2\n\n\nRotom\n0.3\n\n\nUxie\n0.3\n\n\nWishiwashi-Solo\n0.3\n\n\n\n\n\nCount of Pokémon by primary type, most common first:\n\n\nCode\n-- number of pokemon per primary type, highest to lowest (Martin)\nSELECT type_1, COUNT(*) AS type_count\nFROM pokemon_info\nGROUP BY type_1\nORDER BY type_count DESC;\n\n\n\nDisplaying records 1 - 10\n\n\ntype_1\ntype_count\n\n\n\n\nwater\n123\n\n\nnormal\n109\n\n\ngrass\n87\n\n\nbug\n75\n\n\npsychic\n65\n\n\nfire\n59\n\n\nrock\n53\n\n\nelectric\n50\n\n\ndark\n43\n\n\npoison\n40"
+  },
+  {
+    "objectID": "sql_project.html#visualizations",
+    "href": "sql_project.html#visualizations",
+    "title": "SQL Project: Competitive Pokémon Database",
+    "section": "Visualizations",
+    "text": "Visualizations\n\nAverage base-stat total by generation\nWhich generation introduced the strongest Pokémon on average? We average the six base stats across every Pokémon in each generation.\n\n\nSQL: average stat total per generation\nSELECT generation_id,\n       AVG(hp + attack + defense + special_attack + special_defense + speed) AS total\nFROM pokemon_info\nWHERE generation_id IS NOT NULL   -- exclude regional forms with no listed generation\nGROUP BY generation_id;\n\n\n\n8 records\n\n\ngeneration_id\ntotal\n\n\n\n\n1\n407.6424\n\n\n2\n407.1800\n\n\n3\n403.7259\n\n\n4\n445.7570\n\n\n5\n425.7564\n\n\n6\n429.5833\n\n\n7\n449.4091\n\n\n8\n440.5841\n\n\n\n\n\n\n\nPlot: average stat total per generation\ngeneration_plot &lt;- DBI::dbGetQuery(con_pokemon,\n  \"SELECT generation_id,\n          AVG(hp + attack + defense + special_attack + special_defense + speed) AS total\n   FROM pokemon_info\n   WHERE generation_id IS NOT NULL\n   GROUP BY generation_id;\"\n)\n\nggplot(generation_plot, aes(x = generation_id, y = total)) +\n  geom_col(aes(fill = total)) +\n  geom_text(aes(label = round(total)), nudge_y = 10) +\n  scale_fill_gradient(low = \"white\", high = \"red\") +\n  labs(x = \"Generation\", y = \"Average Stat Total\",\n       title = \"Average Base Stats by Generation\") +\n  theme(legend.position = \"none\")\n\n\n\n\n\n\n\n\n\nAverage base-stat totals stay fairly close across generations, with later generations trending slightly higher.\n\n\nMove power distribution by type\nHow hard does each move type hit? We look at the spread of base power per type, excluding status moves (which have 0 power).\n\n\nSQL: damaging-move power by type\nSELECT type, power\nFROM moves\nWHERE power &gt; 1   -- drop status / non-damaging moves\nORDER BY power DESC;\n\n\n\nDisplaying records 1 - 10\n\n\ntype\npower\n\n\n\n\nNormal\n250\n\n\nNormal\n200\n\n\nFire\n180\n\n\nPsychic\n160\n\n\nFire\n160\n\n\nGrass\n160\n\n\nWater\n160\n\n\nDragon\n160\n\n\nWater\n150\n\n\nGrass\n150\n\n\n\n\n\n\n\nPlot: move power distribution by type\ntype_plot &lt;- DBI::dbGetQuery(con_pokemon,\"SELECT type, power FROM moves WHERE power &gt; 1\")\n\nggplot(type_plot, aes(x = reorder(type, power, FUN = median), y = power, fill = type)) +\n  geom_boxplot(alpha = 0.6) +\n  theme_minimal() +\n  theme(axis.text.x = element_text(angle = 45), legend.position = \"none\") +\n  labs(title = \"Distribution of Move Power by Type\",\n       x = \"Move Type\", y = \"Base Power\")\n\n\n\n\n\n\n\n\n\nOrdered by median power: even though Normal has the single highest-powered move, its median is near the bottom — while Fire is consistently high, with the top median."
+  },
+  {
+    "objectID": "sql_project.html#sources-tools",
+    "href": "sql_project.html#sources-tools",
+    "title": "SQL Project: Competitive Pokémon Database",
+    "section": "Sources & tools",
+    "text": "Sources & tools\n\nCompetitive Pokémon tier dataset (pokemon_df, moves_df) — Kaggle\nPokémon info dataset (pokemon_info_df) — TidyTuesday, 2025-04-01\nAI tools (LLM) were used as an aid for dataset editing during development."
   }
 ]
