@@ -196,7 +196,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p><em>Team project with Martin for ADC 405. Full code and data on <a href="https://github.com/ADC-405-S26/Project_2_SQL_Team_3">GitHub</a>.</em></p>
+<p><em>Team project with Martin Tran for STAT 405, Advanced Data Computing. Full code and data on <a href="https://github.com/ADC-405-S26/Project_2_SQL_Team_3">GitHub</a>.</em></p>
 <section id="overview" class="level2">
 <h2 class="anchored" data-anchor-id="overview">Overview</h2>
 <p>Using SQL (run through a local <strong>duckdb</strong> database in R), we built a relational database from three competitive-Pokémon datasets — <code>pokemon</code>, <code>moves</code>, and <code>pokemon_info</code> — covering every Pokémon up to Generation 8, then queried it to answer questions about competitive tiers, typings, base stats, and move power.</p>
@@ -221,10 +221,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="callout-body-container callout-body">
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sqldf)     <span class="co"># run SQL against R data frames (used in the plots)</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(duckdb)    <span class="co"># build a duckdb database locally</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>con_pokemon <span class="ot">&lt;-</span> DBI<span class="sc">::</span><span class="fu">dbConnect</span>(duckdb<span class="sc">::</span><span class="fu">duckdb</span>(), <span class="at">dbdir =</span> <span class="st">"pokemon_db"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(duckdb)    <span class="co"># build a duckdb database locally</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>con_pokemon <span class="ot">&lt;-</span> DBI<span class="sc">::</span><span class="fu">dbConnect</span>(duckdb<span class="sc">::</span><span class="fu">duckdb</span>(), <span class="at">dbdir =</span> <span class="st">"pokemon_db"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">USE</span> pokemon_db;</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -437,7 +436,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="querying-the-database" class="level2">
 <h2 class="anchored" data-anchor-id="querying-the-database">Querying the database</h2>
-<p>With the database in place, we can answer questions that would be tedious to look up by hand — filtering Pokémon by tier, typing, stats, and more. Each query below runs directly against the database.</p>
+<p>With the database in place, we can answer questions that would be tedious to look up by hand, those being filtering Pokémon by tier, typing, stats, and more. Each query below runs directly against the database.</p>
 <section id="the-heaviest-pokémon-in-the-ou-tier" class="level3">
 <h3 class="anchored" data-anchor-id="the-heaviest-pokémon-in-the-ou-tier">The heaviest Pokémon in the OU tier</h3>
 <div class="cell">
@@ -635,7 +634,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </table>
 </div>
 </div>
-<p><em>A correlated subquery returns both the Pokémon name and its generation in one result — something a simple <code>GROUP BY MAX(height)</code> can’t do on its own.</em></p>
+<p><em>A correlated subquery returns both the Pokémon name and its generation in one result which is something a simple <code>GROUP BY MAX(height)</code> can’t do on its own.</em></p>
 </section>
 <section id="poison-type-pokémon-in-the-uu-tier" class="level3">
 <h3 class="anchored" data-anchor-id="poison-type-pokémon-in-the-uu-tier">Poison-type Pokémon in the UU tier</h3>
@@ -1564,7 +1563,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a><span class="an">toc-depth:</span><span class="co"> 2</span></span>
 <span id="cb26-10"><a href="#cb26-10" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
 <span id="cb26-11"><a href="#cb26-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-12"><a href="#cb26-12" aria-hidden="true" tabindex="-1"></a>*Team project with Martin for ADC 405. Full code and data on [GitHub](https://github.com/ADC-405-S26/Project_2_SQL_Team_3).*</span>
+<span id="cb26-12"><a href="#cb26-12" aria-hidden="true" tabindex="-1"></a>*Team project with Martin Tran for STAT 405, Advanced Data Computing. Full code and data on [GitHub](https://github.com/ADC-405-S26/Project_2_SQL_Team_3).*</span>
 <span id="cb26-13"><a href="#cb26-13" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb26-14"><a href="#cb26-14" aria-hidden="true" tabindex="-1"></a><span class="fu">## Overview</span></span>
 <span id="cb26-15"><a href="#cb26-15" aria-hidden="true" tabindex="-1"></a></span>
@@ -1599,318 +1598,316 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb26-46"><a href="#cb26-46" aria-hidden="true" tabindex="-1"></a><span class="co">#| code-fold: false</span></span>
 <span id="cb26-47"><a href="#cb26-47" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb26-48"><a href="#cb26-48" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb26-49"><a href="#cb26-49" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sqldf)     <span class="co"># run SQL against R data frames (used in the plots)</span></span>
-<span id="cb26-50"><a href="#cb26-50" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(duckdb)    <span class="co"># build a duckdb database locally</span></span>
-<span id="cb26-51"><a href="#cb26-51" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-52"><a href="#cb26-52" aria-hidden="true" tabindex="-1"></a>con_pokemon <span class="ot">&lt;-</span> DBI<span class="sc">::</span><span class="fu">dbConnect</span>(duckdb<span class="sc">::</span><span class="fu">duckdb</span>(), <span class="at">dbdir =</span> <span class="st">"pokemon_db"</span>)</span>
-<span id="cb26-53"><a href="#cb26-53" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb26-54"><a href="#cb26-54" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-55"><a href="#cb26-55" aria-hidden="true" tabindex="-1"></a><span class="in">```{sql connection=con_pokemon}</span></span>
-<span id="cb26-56"><a href="#cb26-56" aria-hidden="true" tabindex="-1"></a><span class="co">--| code-fold: false</span></span>
-<span id="cb26-57"><a href="#cb26-57" aria-hidden="true" tabindex="-1"></a><span class="kw">USE</span> pokemon_db;</span>
-<span id="cb26-58"><a href="#cb26-58" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb26-59"><a href="#cb26-59" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-60"><a href="#cb26-60" aria-hidden="true" tabindex="-1"></a><span class="in">```{sql connection=con_pokemon}</span></span>
-<span id="cb26-61"><a href="#cb26-61" aria-hidden="true" tabindex="-1"></a><span class="co">--| code-fold: false</span></span>
-<span id="cb26-62"><a href="#cb26-62" aria-hidden="true" tabindex="-1"></a><span class="kw">DROP</span> <span class="kw">TABLE</span> <span class="cf">IF</span> <span class="kw">EXISTS</span> pokemon;</span>
-<span id="cb26-63"><a href="#cb26-63" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb26-64"><a href="#cb26-64" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-65"><a href="#cb26-65" aria-hidden="true" tabindex="-1"></a><span class="in">```{sql connection=con_pokemon}</span></span>
-<span id="cb26-66"><a href="#cb26-66" aria-hidden="true" tabindex="-1"></a><span class="co">--| code-fold: false</span></span>
-<span id="cb26-67"><a href="#cb26-67" aria-hidden="true" tabindex="-1"></a><span class="kw">CREATE</span> <span class="kw">TABLE</span> pokemon (</span>
-<span id="cb26-68"><a href="#cb26-68" aria-hidden="true" tabindex="-1"></a>  name       <span class="dt">VARCHAR</span>(<span class="dv">255</span>) <span class="kw">NOT</span> <span class="kw">NULL</span> <span class="kw">DEFAULT</span> <span class="st">' '</span>,  <span class="co">-- competitive name; unique, so primary key</span></span>
-<span id="cb26-69"><a href="#cb26-69" aria-hidden="true" tabindex="-1"></a>  hp         <span class="dt">SMALLINT</span> <span class="kw">NOT</span> <span class="kw">NULL</span> <span class="kw">DEFAULT</span> <span class="dv">0</span>,         <span class="co">-- base stats top out ~255, SMALLINT is plenty</span></span>
-<span id="cb26-70"><a href="#cb26-70" aria-hidden="true" tabindex="-1"></a>  atk        <span class="dt">SMALLINT</span> <span class="kw">NOT</span> <span class="kw">NULL</span> <span class="kw">DEFAULT</span> <span class="dv">0</span>,</span>
-<span id="cb26-71"><a href="#cb26-71" aria-hidden="true" tabindex="-1"></a>  def        <span class="dt">SMALLINT</span> <span class="kw">NOT</span> <span class="kw">NULL</span> <span class="kw">DEFAULT</span> <span class="dv">0</span>,</span>
-<span id="cb26-72"><a href="#cb26-72" aria-hidden="true" tabindex="-1"></a>  spa        <span class="dt">SMALLINT</span> <span class="kw">NOT</span> <span class="kw">NULL</span> <span class="kw">DEFAULT</span> <span class="dv">0</span>,</span>
-<span id="cb26-73"><a href="#cb26-73" aria-hidden="true" tabindex="-1"></a>  spd        <span class="dt">SMALLINT</span> <span class="kw">NOT</span> <span class="kw">NULL</span> <span class="kw">DEFAULT</span> <span class="dv">0</span>,</span>
-<span id="cb26-74"><a href="#cb26-74" aria-hidden="true" tabindex="-1"></a>  spe        <span class="dt">SMALLINT</span> <span class="kw">NOT</span> <span class="kw">NULL</span> <span class="kw">DEFAULT</span> <span class="dv">0</span>,</span>
-<span id="cb26-75"><a href="#cb26-75" aria-hidden="true" tabindex="-1"></a>  weight     <span class="dt">DOUBLE</span> <span class="kw">NOT</span> <span class="kw">NULL</span> <span class="kw">DEFAULT</span> <span class="dv">0</span>,           <span class="co">-- kg, has decimals -&gt; DOUBLE</span></span>
-<span id="cb26-76"><a href="#cb26-76" aria-hidden="true" tabindex="-1"></a>  height     <span class="dt">DOUBLE</span> <span class="kw">NOT</span> <span class="kw">NULL</span> <span class="kw">DEFAULT</span> <span class="dv">0</span>,           <span class="co">-- m, has decimals -&gt; DOUBLE</span></span>
-<span id="cb26-77"><a href="#cb26-77" aria-hidden="true" tabindex="-1"></a>  formats    <span class="dt">VARCHAR</span>(<span class="dv">255</span>),                        <span class="co">-- competitive tier (OU, UU, NFE, LC...)</span></span>
-<span id="cb26-78"><a href="#cb26-78" aria-hidden="true" tabindex="-1"></a>  generation <span class="dt">VARCHAR</span>(<span class="dv">255</span>),                        <span class="co">-- game generation code (RB, etc.)</span></span>
-<span id="cb26-79"><a href="#cb26-79" aria-hidden="true" tabindex="-1"></a>  <span class="kw">PRIMARY</span> <span class="kw">KEY</span> (name)</span>
-<span id="cb26-80"><a href="#cb26-80" aria-hidden="true" tabindex="-1"></a>);</span>
-<span id="cb26-81"><a href="#cb26-81" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb26-82"><a href="#cb26-82" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-83"><a href="#cb26-83" aria-hidden="true" tabindex="-1"></a><span class="in">```{sql connection=con_pokemon}</span></span>
-<span id="cb26-84"><a href="#cb26-84" aria-hidden="true" tabindex="-1"></a><span class="co">--| code-fold: false</span></span>
-<span id="cb26-85"><a href="#cb26-85" aria-hidden="true" tabindex="-1"></a>COPY pokemon <span class="kw">FROM</span> <span class="st">'pokemon_df.csv'</span> (<span class="fu">FORMAT</span> CSV, HEADER, <span class="kw">NULL</span> <span class="st">'NA'</span>);</span>
-<span id="cb26-86"><a href="#cb26-86" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb26-87"><a href="#cb26-87" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-88"><a href="#cb26-88" aria-hidden="true" tabindex="-1"></a><span class="in">```{sql connection=con_pokemon}</span></span>
-<span id="cb26-89"><a href="#cb26-89" aria-hidden="true" tabindex="-1"></a><span class="co">--| code-fold: false</span></span>
-<span id="cb26-90"><a href="#cb26-90" aria-hidden="true" tabindex="-1"></a><span class="kw">DROP</span> <span class="kw">TABLE</span> <span class="cf">IF</span> <span class="kw">EXISTS</span> moves;</span>
-<span id="cb26-91"><a href="#cb26-91" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb26-92"><a href="#cb26-92" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-93"><a href="#cb26-93" aria-hidden="true" tabindex="-1"></a><span class="in">```{sql connection=con_pokemon}</span></span>
-<span id="cb26-94"><a href="#cb26-94" aria-hidden="true" tabindex="-1"></a><span class="co">--| code-fold: false</span></span>
-<span id="cb26-95"><a href="#cb26-95" aria-hidden="true" tabindex="-1"></a><span class="kw">CREATE</span> <span class="kw">TABLE</span> moves (</span>
-<span id="cb26-96"><a href="#cb26-96" aria-hidden="true" tabindex="-1"></a>  name        <span class="dt">VARCHAR</span>(<span class="dv">255</span>) <span class="kw">NOT</span> <span class="kw">NULL</span> <span class="kw">DEFAULT</span> <span class="st">' '</span>,  <span class="co">-- move name; unique, so primary key</span></span>
-<span id="cb26-97"><a href="#cb26-97" aria-hidden="true" tabindex="-1"></a>  category    <span class="dt">VARCHAR</span>(<span class="dv">255</span>),                        <span class="co">-- Physical / Special / Non-Damaging</span></span>
-<span id="cb26-98"><a href="#cb26-98" aria-hidden="true" tabindex="-1"></a>  <span class="fu">power</span>       <span class="dt">SMALLINT</span> <span class="kw">NOT</span> <span class="kw">NULL</span> <span class="kw">DEFAULT</span> <span class="dv">0</span>,         <span class="co">-- base power; 0 for status moves</span></span>
-<span id="cb26-99"><a href="#cb26-99" aria-hidden="true" tabindex="-1"></a>  accuracy    <span class="dt">SMALLINT</span> <span class="kw">NOT</span> <span class="kw">NULL</span> <span class="kw">DEFAULT</span> <span class="dv">0</span>,         <span class="co">-- 0-100</span></span>
-<span id="cb26-100"><a href="#cb26-100" aria-hidden="true" tabindex="-1"></a>  priority    <span class="dt">SMALLINT</span> <span class="kw">NOT</span> <span class="kw">NULL</span> <span class="kw">DEFAULT</span> <span class="dv">0</span>,         <span class="co">-- can be negative; SMALLINT is signed</span></span>
-<span id="cb26-101"><a href="#cb26-101" aria-hidden="true" tabindex="-1"></a>  pp          <span class="dt">SMALLINT</span> <span class="kw">NOT</span> <span class="kw">NULL</span> <span class="kw">DEFAULT</span> <span class="dv">0</span>,         <span class="co">-- power points</span></span>
-<span id="cb26-102"><a href="#cb26-102" aria-hidden="true" tabindex="-1"></a>  description <span class="dt">VARCHAR</span>(<span class="dv">255</span>),                         <span class="co">-- free-text effect</span></span>
-<span id="cb26-103"><a href="#cb26-103" aria-hidden="true" tabindex="-1"></a>  <span class="kw">type</span>        <span class="dt">VARCHAR</span>(<span class="dv">255</span>),                         <span class="co">-- elemental type</span></span>
-<span id="cb26-104"><a href="#cb26-104" aria-hidden="true" tabindex="-1"></a>  <span class="kw">PRIMARY</span> <span class="kw">KEY</span> (name)</span>
-<span id="cb26-105"><a href="#cb26-105" aria-hidden="true" tabindex="-1"></a>);</span>
-<span id="cb26-106"><a href="#cb26-106" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb26-107"><a href="#cb26-107" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-108"><a href="#cb26-108" aria-hidden="true" tabindex="-1"></a><span class="in">```{sql connection=con_pokemon}</span></span>
-<span id="cb26-109"><a href="#cb26-109" aria-hidden="true" tabindex="-1"></a><span class="co">--| code-fold: false</span></span>
-<span id="cb26-110"><a href="#cb26-110" aria-hidden="true" tabindex="-1"></a>COPY moves <span class="kw">FROM</span> <span class="st">'moves_df.csv'</span> (<span class="fu">FORMAT</span> CSV, HEADER, <span class="kw">NULL</span> <span class="st">'NA'</span>);</span>
-<span id="cb26-111"><a href="#cb26-111" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb26-112"><a href="#cb26-112" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-113"><a href="#cb26-113" aria-hidden="true" tabindex="-1"></a><span class="in">```{sql connection=con_pokemon}</span></span>
-<span id="cb26-114"><a href="#cb26-114" aria-hidden="true" tabindex="-1"></a><span class="co">--| code-fold: false</span></span>
-<span id="cb26-115"><a href="#cb26-115" aria-hidden="true" tabindex="-1"></a><span class="kw">DROP</span> <span class="kw">TABLE</span> <span class="cf">IF</span> <span class="kw">EXISTS</span> pokemon_info;</span>
-<span id="cb26-116"><a href="#cb26-116" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb26-117"><a href="#cb26-117" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-118"><a href="#cb26-118" aria-hidden="true" tabindex="-1"></a><span class="in">```{sql connection=con_pokemon}</span></span>
-<span id="cb26-119"><a href="#cb26-119" aria-hidden="true" tabindex="-1"></a><span class="co">--| code-fold: false</span></span>
-<span id="cb26-120"><a href="#cb26-120" aria-hidden="true" tabindex="-1"></a><span class="kw">CREATE</span> <span class="kw">TABLE</span> pokemon_info (</span>
-<span id="cb26-121"><a href="#cb26-121" aria-hidden="true" tabindex="-1"></a>  id              <span class="dt">INTEGER</span> <span class="kw">NOT</span> <span class="kw">NULL</span> <span class="kw">DEFAULT</span> <span class="dv">0</span>,        <span class="co">-- unique row id, so primary key</span></span>
-<span id="cb26-122"><a href="#cb26-122" aria-hidden="true" tabindex="-1"></a>  pokemon         <span class="dt">VARCHAR</span>(<span class="dv">255</span>) <span class="kw">NOT</span> <span class="kw">NULL</span> <span class="kw">DEFAULT</span> <span class="st">' '</span>, <span class="co">-- name; links to pokemon.name</span></span>
-<span id="cb26-123"><a href="#cb26-123" aria-hidden="true" tabindex="-1"></a>  species_id      <span class="dt">INTEGER</span> <span class="kw">NOT</span> <span class="kw">NULL</span> <span class="kw">DEFAULT</span> <span class="dv">0</span>,</span>
-<span id="cb26-124"><a href="#cb26-124" aria-hidden="true" tabindex="-1"></a>  height          <span class="dt">DOUBLE</span> <span class="kw">NOT</span> <span class="kw">NULL</span> <span class="kw">DEFAULT</span> <span class="dv">0</span>,</span>
-<span id="cb26-125"><a href="#cb26-125" aria-hidden="true" tabindex="-1"></a>  weight          <span class="dt">DOUBLE</span> <span class="kw">NOT</span> <span class="kw">NULL</span> <span class="kw">DEFAULT</span> <span class="dv">0</span>,</span>
-<span id="cb26-126"><a href="#cb26-126" aria-hidden="true" tabindex="-1"></a>  base_experience <span class="dt">SMALLINT</span> <span class="kw">NOT</span> <span class="kw">NULL</span> <span class="kw">DEFAULT</span> <span class="dv">0</span>,</span>
-<span id="cb26-127"><a href="#cb26-127" aria-hidden="true" tabindex="-1"></a>  type_1          <span class="dt">VARCHAR</span>(<span class="dv">255</span>),                      <span class="co">-- primary type</span></span>
-<span id="cb26-128"><a href="#cb26-128" aria-hidden="true" tabindex="-1"></a>  type_2          <span class="dt">VARCHAR</span>(<span class="dv">255</span>) <span class="kw">DEFAULT</span> <span class="kw">NULL</span>,         <span class="co">-- single-type pokemon have none -&gt; NULL</span></span>
-<span id="cb26-129"><a href="#cb26-129" aria-hidden="true" tabindex="-1"></a>  hp              <span class="dt">SMALLINT</span> <span class="kw">NOT</span> <span class="kw">NULL</span> <span class="kw">DEFAULT</span> <span class="dv">0</span>,</span>
-<span id="cb26-130"><a href="#cb26-130" aria-hidden="true" tabindex="-1"></a>  attack          <span class="dt">SMALLINT</span> <span class="kw">NOT</span> <span class="kw">NULL</span> <span class="kw">DEFAULT</span> <span class="dv">0</span>,</span>
-<span id="cb26-131"><a href="#cb26-131" aria-hidden="true" tabindex="-1"></a>  defense         <span class="dt">SMALLINT</span> <span class="kw">NOT</span> <span class="kw">NULL</span> <span class="kw">DEFAULT</span> <span class="dv">0</span>,</span>
-<span id="cb26-132"><a href="#cb26-132" aria-hidden="true" tabindex="-1"></a>  special_attack  <span class="dt">SMALLINT</span> <span class="kw">NOT</span> <span class="kw">NULL</span> <span class="kw">DEFAULT</span> <span class="dv">0</span>,</span>
-<span id="cb26-133"><a href="#cb26-133" aria-hidden="true" tabindex="-1"></a>  special_defense <span class="dt">SMALLINT</span> <span class="kw">NOT</span> <span class="kw">NULL</span> <span class="kw">DEFAULT</span> <span class="dv">0</span>,</span>
-<span id="cb26-134"><a href="#cb26-134" aria-hidden="true" tabindex="-1"></a>  speed           <span class="dt">SMALLINT</span> <span class="kw">NOT</span> <span class="kw">NULL</span> <span class="kw">DEFAULT</span> <span class="dv">0</span>,</span>
-<span id="cb26-135"><a href="#cb26-135" aria-hidden="true" tabindex="-1"></a>  color_1         <span class="dt">VARCHAR</span>(<span class="dv">255</span>),                      <span class="co">-- hex colour</span></span>
-<span id="cb26-136"><a href="#cb26-136" aria-hidden="true" tabindex="-1"></a>  color_2         <span class="dt">VARCHAR</span>(<span class="dv">255</span>) <span class="kw">DEFAULT</span> <span class="kw">NULL</span>,         <span class="co">-- optional, so nullable</span></span>
-<span id="cb26-137"><a href="#cb26-137" aria-hidden="true" tabindex="-1"></a>  color_f         <span class="dt">VARCHAR</span>(<span class="dv">255</span>) <span class="kw">DEFAULT</span> <span class="kw">NULL</span>,</span>
-<span id="cb26-138"><a href="#cb26-138" aria-hidden="true" tabindex="-1"></a>  egg_group_1     <span class="dt">VARCHAR</span>(<span class="dv">255</span>),</span>
-<span id="cb26-139"><a href="#cb26-139" aria-hidden="true" tabindex="-1"></a>  egg_group_2     <span class="dt">VARCHAR</span>(<span class="dv">255</span>) <span class="kw">DEFAULT</span> <span class="kw">NULL</span>,         <span class="co">-- many have a single egg group -&gt; NULL</span></span>
-<span id="cb26-140"><a href="#cb26-140" aria-hidden="true" tabindex="-1"></a>  url_icon        <span class="dt">VARCHAR</span>(<span class="dv">255</span>),</span>
-<span id="cb26-141"><a href="#cb26-141" aria-hidden="true" tabindex="-1"></a>  generation_id   <span class="dt">SMALLINT</span> <span class="kw">DEFAULT</span> <span class="kw">NULL</span>,             <span class="co">-- 1-8; regional forms are NULL</span></span>
-<span id="cb26-142"><a href="#cb26-142" aria-hidden="true" tabindex="-1"></a>  url_image       <span class="dt">VARCHAR</span>(<span class="dv">255</span>),</span>
-<span id="cb26-143"><a href="#cb26-143" aria-hidden="true" tabindex="-1"></a>  <span class="kw">PRIMARY</span> <span class="kw">KEY</span> (id)</span>
-<span id="cb26-144"><a href="#cb26-144" aria-hidden="true" tabindex="-1"></a>);</span>
-<span id="cb26-145"><a href="#cb26-145" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb26-146"><a href="#cb26-146" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-147"><a href="#cb26-147" aria-hidden="true" tabindex="-1"></a><span class="in">```{sql connection=con_pokemon}</span></span>
-<span id="cb26-148"><a href="#cb26-148" aria-hidden="true" tabindex="-1"></a><span class="co">--| code-fold: false</span></span>
-<span id="cb26-149"><a href="#cb26-149" aria-hidden="true" tabindex="-1"></a>COPY pokemon_info <span class="kw">FROM</span> <span class="st">'pokemon_info_df.csv'</span> (<span class="fu">FORMAT</span> CSV, HEADER, <span class="kw">NULL</span> <span class="st">'NA'</span>);</span>
-<span id="cb26-150"><a href="#cb26-150" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb26-151"><a href="#cb26-151" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-152"><a href="#cb26-152" aria-hidden="true" tabindex="-1"></a>A quick check that all three tables built and loaded correctly:</span>
-<span id="cb26-153"><a href="#cb26-153" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-154"><a href="#cb26-154" aria-hidden="true" tabindex="-1"></a><span class="in">```{sql connection=con_pokemon}</span></span>
-<span id="cb26-155"><a href="#cb26-155" aria-hidden="true" tabindex="-1"></a><span class="co">--| code-fold: false</span></span>
-<span id="cb26-156"><a href="#cb26-156" aria-hidden="true" tabindex="-1"></a><span class="kw">SHOW</span> <span class="kw">TABLES</span>;</span>
-<span id="cb26-157"><a href="#cb26-157" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb26-158"><a href="#cb26-158" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-159"><a href="#cb26-159" aria-hidden="true" tabindex="-1"></a><span class="in">```{sql connection=con_pokemon}</span></span>
-<span id="cb26-160"><a href="#cb26-160" aria-hidden="true" tabindex="-1"></a><span class="co">--| code-fold: false</span></span>
-<span id="cb26-161"><a href="#cb26-161" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span> <span class="kw">FROM</span> pokemon <span class="kw">LIMIT</span> <span class="dv">5</span>;</span>
-<span id="cb26-162"><a href="#cb26-162" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb26-163"><a href="#cb26-163" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb26-164"><a href="#cb26-164" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-165"><a href="#cb26-165" aria-hidden="true" tabindex="-1"></a><span class="fu">## Querying the database</span></span>
-<span id="cb26-166"><a href="#cb26-166" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-167"><a href="#cb26-167" aria-hidden="true" tabindex="-1"></a>With the database in place, we can answer questions that would be tedious to look</span>
-<span id="cb26-168"><a href="#cb26-168" aria-hidden="true" tabindex="-1"></a>up by hand — filtering Pokémon by tier, typing, stats, and more. Each query below</span>
-<span id="cb26-169"><a href="#cb26-169" aria-hidden="true" tabindex="-1"></a>runs directly against the database.</span>
+<span id="cb26-49"><a href="#cb26-49" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(duckdb)    <span class="co"># build a duckdb database locally</span></span>
+<span id="cb26-50"><a href="#cb26-50" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-51"><a href="#cb26-51" aria-hidden="true" tabindex="-1"></a>con_pokemon <span class="ot">&lt;-</span> DBI<span class="sc">::</span><span class="fu">dbConnect</span>(duckdb<span class="sc">::</span><span class="fu">duckdb</span>(), <span class="at">dbdir =</span> <span class="st">"pokemon_db"</span>)</span>
+<span id="cb26-52"><a href="#cb26-52" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb26-53"><a href="#cb26-53" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-54"><a href="#cb26-54" aria-hidden="true" tabindex="-1"></a><span class="in">```{sql connection=con_pokemon}</span></span>
+<span id="cb26-55"><a href="#cb26-55" aria-hidden="true" tabindex="-1"></a><span class="co">--| code-fold: false</span></span>
+<span id="cb26-56"><a href="#cb26-56" aria-hidden="true" tabindex="-1"></a><span class="kw">USE</span> pokemon_db;</span>
+<span id="cb26-57"><a href="#cb26-57" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb26-58"><a href="#cb26-58" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-59"><a href="#cb26-59" aria-hidden="true" tabindex="-1"></a><span class="in">```{sql connection=con_pokemon}</span></span>
+<span id="cb26-60"><a href="#cb26-60" aria-hidden="true" tabindex="-1"></a><span class="co">--| code-fold: false</span></span>
+<span id="cb26-61"><a href="#cb26-61" aria-hidden="true" tabindex="-1"></a><span class="kw">DROP</span> <span class="kw">TABLE</span> <span class="cf">IF</span> <span class="kw">EXISTS</span> pokemon;</span>
+<span id="cb26-62"><a href="#cb26-62" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb26-63"><a href="#cb26-63" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-64"><a href="#cb26-64" aria-hidden="true" tabindex="-1"></a><span class="in">```{sql connection=con_pokemon}</span></span>
+<span id="cb26-65"><a href="#cb26-65" aria-hidden="true" tabindex="-1"></a><span class="co">--| code-fold: false</span></span>
+<span id="cb26-66"><a href="#cb26-66" aria-hidden="true" tabindex="-1"></a><span class="kw">CREATE</span> <span class="kw">TABLE</span> pokemon (</span>
+<span id="cb26-67"><a href="#cb26-67" aria-hidden="true" tabindex="-1"></a>  name       <span class="dt">VARCHAR</span>(<span class="dv">255</span>) <span class="kw">NOT</span> <span class="kw">NULL</span> <span class="kw">DEFAULT</span> <span class="st">' '</span>,  <span class="co">-- competitive name; unique, so primary key</span></span>
+<span id="cb26-68"><a href="#cb26-68" aria-hidden="true" tabindex="-1"></a>  hp         <span class="dt">SMALLINT</span> <span class="kw">NOT</span> <span class="kw">NULL</span> <span class="kw">DEFAULT</span> <span class="dv">0</span>,         <span class="co">-- base stats top out ~255, SMALLINT is plenty</span></span>
+<span id="cb26-69"><a href="#cb26-69" aria-hidden="true" tabindex="-1"></a>  atk        <span class="dt">SMALLINT</span> <span class="kw">NOT</span> <span class="kw">NULL</span> <span class="kw">DEFAULT</span> <span class="dv">0</span>,</span>
+<span id="cb26-70"><a href="#cb26-70" aria-hidden="true" tabindex="-1"></a>  def        <span class="dt">SMALLINT</span> <span class="kw">NOT</span> <span class="kw">NULL</span> <span class="kw">DEFAULT</span> <span class="dv">0</span>,</span>
+<span id="cb26-71"><a href="#cb26-71" aria-hidden="true" tabindex="-1"></a>  spa        <span class="dt">SMALLINT</span> <span class="kw">NOT</span> <span class="kw">NULL</span> <span class="kw">DEFAULT</span> <span class="dv">0</span>,</span>
+<span id="cb26-72"><a href="#cb26-72" aria-hidden="true" tabindex="-1"></a>  spd        <span class="dt">SMALLINT</span> <span class="kw">NOT</span> <span class="kw">NULL</span> <span class="kw">DEFAULT</span> <span class="dv">0</span>,</span>
+<span id="cb26-73"><a href="#cb26-73" aria-hidden="true" tabindex="-1"></a>  spe        <span class="dt">SMALLINT</span> <span class="kw">NOT</span> <span class="kw">NULL</span> <span class="kw">DEFAULT</span> <span class="dv">0</span>,</span>
+<span id="cb26-74"><a href="#cb26-74" aria-hidden="true" tabindex="-1"></a>  weight     <span class="dt">DOUBLE</span> <span class="kw">NOT</span> <span class="kw">NULL</span> <span class="kw">DEFAULT</span> <span class="dv">0</span>,           <span class="co">-- kg, has decimals -&gt; DOUBLE</span></span>
+<span id="cb26-75"><a href="#cb26-75" aria-hidden="true" tabindex="-1"></a>  height     <span class="dt">DOUBLE</span> <span class="kw">NOT</span> <span class="kw">NULL</span> <span class="kw">DEFAULT</span> <span class="dv">0</span>,           <span class="co">-- m, has decimals -&gt; DOUBLE</span></span>
+<span id="cb26-76"><a href="#cb26-76" aria-hidden="true" tabindex="-1"></a>  formats    <span class="dt">VARCHAR</span>(<span class="dv">255</span>),                        <span class="co">-- competitive tier (OU, UU, NFE, LC...)</span></span>
+<span id="cb26-77"><a href="#cb26-77" aria-hidden="true" tabindex="-1"></a>  generation <span class="dt">VARCHAR</span>(<span class="dv">255</span>),                        <span class="co">-- game generation code (RB, etc.)</span></span>
+<span id="cb26-78"><a href="#cb26-78" aria-hidden="true" tabindex="-1"></a>  <span class="kw">PRIMARY</span> <span class="kw">KEY</span> (name)</span>
+<span id="cb26-79"><a href="#cb26-79" aria-hidden="true" tabindex="-1"></a>);</span>
+<span id="cb26-80"><a href="#cb26-80" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb26-81"><a href="#cb26-81" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-82"><a href="#cb26-82" aria-hidden="true" tabindex="-1"></a><span class="in">```{sql connection=con_pokemon}</span></span>
+<span id="cb26-83"><a href="#cb26-83" aria-hidden="true" tabindex="-1"></a><span class="co">--| code-fold: false</span></span>
+<span id="cb26-84"><a href="#cb26-84" aria-hidden="true" tabindex="-1"></a>COPY pokemon <span class="kw">FROM</span> <span class="st">'pokemon_df.csv'</span> (<span class="fu">FORMAT</span> CSV, HEADER, <span class="kw">NULL</span> <span class="st">'NA'</span>);</span>
+<span id="cb26-85"><a href="#cb26-85" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb26-86"><a href="#cb26-86" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-87"><a href="#cb26-87" aria-hidden="true" tabindex="-1"></a><span class="in">```{sql connection=con_pokemon}</span></span>
+<span id="cb26-88"><a href="#cb26-88" aria-hidden="true" tabindex="-1"></a><span class="co">--| code-fold: false</span></span>
+<span id="cb26-89"><a href="#cb26-89" aria-hidden="true" tabindex="-1"></a><span class="kw">DROP</span> <span class="kw">TABLE</span> <span class="cf">IF</span> <span class="kw">EXISTS</span> moves;</span>
+<span id="cb26-90"><a href="#cb26-90" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb26-91"><a href="#cb26-91" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-92"><a href="#cb26-92" aria-hidden="true" tabindex="-1"></a><span class="in">```{sql connection=con_pokemon}</span></span>
+<span id="cb26-93"><a href="#cb26-93" aria-hidden="true" tabindex="-1"></a><span class="co">--| code-fold: false</span></span>
+<span id="cb26-94"><a href="#cb26-94" aria-hidden="true" tabindex="-1"></a><span class="kw">CREATE</span> <span class="kw">TABLE</span> moves (</span>
+<span id="cb26-95"><a href="#cb26-95" aria-hidden="true" tabindex="-1"></a>  name        <span class="dt">VARCHAR</span>(<span class="dv">255</span>) <span class="kw">NOT</span> <span class="kw">NULL</span> <span class="kw">DEFAULT</span> <span class="st">' '</span>,  <span class="co">-- move name; unique, so primary key</span></span>
+<span id="cb26-96"><a href="#cb26-96" aria-hidden="true" tabindex="-1"></a>  category    <span class="dt">VARCHAR</span>(<span class="dv">255</span>),                        <span class="co">-- Physical / Special / Non-Damaging</span></span>
+<span id="cb26-97"><a href="#cb26-97" aria-hidden="true" tabindex="-1"></a>  <span class="fu">power</span>       <span class="dt">SMALLINT</span> <span class="kw">NOT</span> <span class="kw">NULL</span> <span class="kw">DEFAULT</span> <span class="dv">0</span>,         <span class="co">-- base power; 0 for status moves</span></span>
+<span id="cb26-98"><a href="#cb26-98" aria-hidden="true" tabindex="-1"></a>  accuracy    <span class="dt">SMALLINT</span> <span class="kw">NOT</span> <span class="kw">NULL</span> <span class="kw">DEFAULT</span> <span class="dv">0</span>,         <span class="co">-- 0-100</span></span>
+<span id="cb26-99"><a href="#cb26-99" aria-hidden="true" tabindex="-1"></a>  priority    <span class="dt">SMALLINT</span> <span class="kw">NOT</span> <span class="kw">NULL</span> <span class="kw">DEFAULT</span> <span class="dv">0</span>,         <span class="co">-- can be negative; SMALLINT is signed</span></span>
+<span id="cb26-100"><a href="#cb26-100" aria-hidden="true" tabindex="-1"></a>  pp          <span class="dt">SMALLINT</span> <span class="kw">NOT</span> <span class="kw">NULL</span> <span class="kw">DEFAULT</span> <span class="dv">0</span>,         <span class="co">-- power points</span></span>
+<span id="cb26-101"><a href="#cb26-101" aria-hidden="true" tabindex="-1"></a>  description <span class="dt">VARCHAR</span>(<span class="dv">255</span>),                         <span class="co">-- free-text effect</span></span>
+<span id="cb26-102"><a href="#cb26-102" aria-hidden="true" tabindex="-1"></a>  <span class="kw">type</span>        <span class="dt">VARCHAR</span>(<span class="dv">255</span>),                         <span class="co">-- elemental type</span></span>
+<span id="cb26-103"><a href="#cb26-103" aria-hidden="true" tabindex="-1"></a>  <span class="kw">PRIMARY</span> <span class="kw">KEY</span> (name)</span>
+<span id="cb26-104"><a href="#cb26-104" aria-hidden="true" tabindex="-1"></a>);</span>
+<span id="cb26-105"><a href="#cb26-105" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb26-106"><a href="#cb26-106" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-107"><a href="#cb26-107" aria-hidden="true" tabindex="-1"></a><span class="in">```{sql connection=con_pokemon}</span></span>
+<span id="cb26-108"><a href="#cb26-108" aria-hidden="true" tabindex="-1"></a><span class="co">--| code-fold: false</span></span>
+<span id="cb26-109"><a href="#cb26-109" aria-hidden="true" tabindex="-1"></a>COPY moves <span class="kw">FROM</span> <span class="st">'moves_df.csv'</span> (<span class="fu">FORMAT</span> CSV, HEADER, <span class="kw">NULL</span> <span class="st">'NA'</span>);</span>
+<span id="cb26-110"><a href="#cb26-110" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb26-111"><a href="#cb26-111" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-112"><a href="#cb26-112" aria-hidden="true" tabindex="-1"></a><span class="in">```{sql connection=con_pokemon}</span></span>
+<span id="cb26-113"><a href="#cb26-113" aria-hidden="true" tabindex="-1"></a><span class="co">--| code-fold: false</span></span>
+<span id="cb26-114"><a href="#cb26-114" aria-hidden="true" tabindex="-1"></a><span class="kw">DROP</span> <span class="kw">TABLE</span> <span class="cf">IF</span> <span class="kw">EXISTS</span> pokemon_info;</span>
+<span id="cb26-115"><a href="#cb26-115" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb26-116"><a href="#cb26-116" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-117"><a href="#cb26-117" aria-hidden="true" tabindex="-1"></a><span class="in">```{sql connection=con_pokemon}</span></span>
+<span id="cb26-118"><a href="#cb26-118" aria-hidden="true" tabindex="-1"></a><span class="co">--| code-fold: false</span></span>
+<span id="cb26-119"><a href="#cb26-119" aria-hidden="true" tabindex="-1"></a><span class="kw">CREATE</span> <span class="kw">TABLE</span> pokemon_info (</span>
+<span id="cb26-120"><a href="#cb26-120" aria-hidden="true" tabindex="-1"></a>  id              <span class="dt">INTEGER</span> <span class="kw">NOT</span> <span class="kw">NULL</span> <span class="kw">DEFAULT</span> <span class="dv">0</span>,        <span class="co">-- unique row id, so primary key</span></span>
+<span id="cb26-121"><a href="#cb26-121" aria-hidden="true" tabindex="-1"></a>  pokemon         <span class="dt">VARCHAR</span>(<span class="dv">255</span>) <span class="kw">NOT</span> <span class="kw">NULL</span> <span class="kw">DEFAULT</span> <span class="st">' '</span>, <span class="co">-- name; links to pokemon.name</span></span>
+<span id="cb26-122"><a href="#cb26-122" aria-hidden="true" tabindex="-1"></a>  species_id      <span class="dt">INTEGER</span> <span class="kw">NOT</span> <span class="kw">NULL</span> <span class="kw">DEFAULT</span> <span class="dv">0</span>,</span>
+<span id="cb26-123"><a href="#cb26-123" aria-hidden="true" tabindex="-1"></a>  height          <span class="dt">DOUBLE</span> <span class="kw">NOT</span> <span class="kw">NULL</span> <span class="kw">DEFAULT</span> <span class="dv">0</span>,</span>
+<span id="cb26-124"><a href="#cb26-124" aria-hidden="true" tabindex="-1"></a>  weight          <span class="dt">DOUBLE</span> <span class="kw">NOT</span> <span class="kw">NULL</span> <span class="kw">DEFAULT</span> <span class="dv">0</span>,</span>
+<span id="cb26-125"><a href="#cb26-125" aria-hidden="true" tabindex="-1"></a>  base_experience <span class="dt">SMALLINT</span> <span class="kw">NOT</span> <span class="kw">NULL</span> <span class="kw">DEFAULT</span> <span class="dv">0</span>,</span>
+<span id="cb26-126"><a href="#cb26-126" aria-hidden="true" tabindex="-1"></a>  type_1          <span class="dt">VARCHAR</span>(<span class="dv">255</span>),                      <span class="co">-- primary type</span></span>
+<span id="cb26-127"><a href="#cb26-127" aria-hidden="true" tabindex="-1"></a>  type_2          <span class="dt">VARCHAR</span>(<span class="dv">255</span>) <span class="kw">DEFAULT</span> <span class="kw">NULL</span>,         <span class="co">-- single-type pokemon have none -&gt; NULL</span></span>
+<span id="cb26-128"><a href="#cb26-128" aria-hidden="true" tabindex="-1"></a>  hp              <span class="dt">SMALLINT</span> <span class="kw">NOT</span> <span class="kw">NULL</span> <span class="kw">DEFAULT</span> <span class="dv">0</span>,</span>
+<span id="cb26-129"><a href="#cb26-129" aria-hidden="true" tabindex="-1"></a>  attack          <span class="dt">SMALLINT</span> <span class="kw">NOT</span> <span class="kw">NULL</span> <span class="kw">DEFAULT</span> <span class="dv">0</span>,</span>
+<span id="cb26-130"><a href="#cb26-130" aria-hidden="true" tabindex="-1"></a>  defense         <span class="dt">SMALLINT</span> <span class="kw">NOT</span> <span class="kw">NULL</span> <span class="kw">DEFAULT</span> <span class="dv">0</span>,</span>
+<span id="cb26-131"><a href="#cb26-131" aria-hidden="true" tabindex="-1"></a>  special_attack  <span class="dt">SMALLINT</span> <span class="kw">NOT</span> <span class="kw">NULL</span> <span class="kw">DEFAULT</span> <span class="dv">0</span>,</span>
+<span id="cb26-132"><a href="#cb26-132" aria-hidden="true" tabindex="-1"></a>  special_defense <span class="dt">SMALLINT</span> <span class="kw">NOT</span> <span class="kw">NULL</span> <span class="kw">DEFAULT</span> <span class="dv">0</span>,</span>
+<span id="cb26-133"><a href="#cb26-133" aria-hidden="true" tabindex="-1"></a>  speed           <span class="dt">SMALLINT</span> <span class="kw">NOT</span> <span class="kw">NULL</span> <span class="kw">DEFAULT</span> <span class="dv">0</span>,</span>
+<span id="cb26-134"><a href="#cb26-134" aria-hidden="true" tabindex="-1"></a>  color_1         <span class="dt">VARCHAR</span>(<span class="dv">255</span>),                      <span class="co">-- hex colour</span></span>
+<span id="cb26-135"><a href="#cb26-135" aria-hidden="true" tabindex="-1"></a>  color_2         <span class="dt">VARCHAR</span>(<span class="dv">255</span>) <span class="kw">DEFAULT</span> <span class="kw">NULL</span>,         <span class="co">-- optional, so nullable</span></span>
+<span id="cb26-136"><a href="#cb26-136" aria-hidden="true" tabindex="-1"></a>  color_f         <span class="dt">VARCHAR</span>(<span class="dv">255</span>) <span class="kw">DEFAULT</span> <span class="kw">NULL</span>,</span>
+<span id="cb26-137"><a href="#cb26-137" aria-hidden="true" tabindex="-1"></a>  egg_group_1     <span class="dt">VARCHAR</span>(<span class="dv">255</span>),</span>
+<span id="cb26-138"><a href="#cb26-138" aria-hidden="true" tabindex="-1"></a>  egg_group_2     <span class="dt">VARCHAR</span>(<span class="dv">255</span>) <span class="kw">DEFAULT</span> <span class="kw">NULL</span>,         <span class="co">-- many have a single egg group -&gt; NULL</span></span>
+<span id="cb26-139"><a href="#cb26-139" aria-hidden="true" tabindex="-1"></a>  url_icon        <span class="dt">VARCHAR</span>(<span class="dv">255</span>),</span>
+<span id="cb26-140"><a href="#cb26-140" aria-hidden="true" tabindex="-1"></a>  generation_id   <span class="dt">SMALLINT</span> <span class="kw">DEFAULT</span> <span class="kw">NULL</span>,             <span class="co">-- 1-8; regional forms are NULL</span></span>
+<span id="cb26-141"><a href="#cb26-141" aria-hidden="true" tabindex="-1"></a>  url_image       <span class="dt">VARCHAR</span>(<span class="dv">255</span>),</span>
+<span id="cb26-142"><a href="#cb26-142" aria-hidden="true" tabindex="-1"></a>  <span class="kw">PRIMARY</span> <span class="kw">KEY</span> (id)</span>
+<span id="cb26-143"><a href="#cb26-143" aria-hidden="true" tabindex="-1"></a>);</span>
+<span id="cb26-144"><a href="#cb26-144" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb26-145"><a href="#cb26-145" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-146"><a href="#cb26-146" aria-hidden="true" tabindex="-1"></a><span class="in">```{sql connection=con_pokemon}</span></span>
+<span id="cb26-147"><a href="#cb26-147" aria-hidden="true" tabindex="-1"></a><span class="co">--| code-fold: false</span></span>
+<span id="cb26-148"><a href="#cb26-148" aria-hidden="true" tabindex="-1"></a>COPY pokemon_info <span class="kw">FROM</span> <span class="st">'pokemon_info_df.csv'</span> (<span class="fu">FORMAT</span> CSV, HEADER, <span class="kw">NULL</span> <span class="st">'NA'</span>);</span>
+<span id="cb26-149"><a href="#cb26-149" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb26-150"><a href="#cb26-150" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-151"><a href="#cb26-151" aria-hidden="true" tabindex="-1"></a>A quick check that all three tables built and loaded correctly:</span>
+<span id="cb26-152"><a href="#cb26-152" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-153"><a href="#cb26-153" aria-hidden="true" tabindex="-1"></a><span class="in">```{sql connection=con_pokemon}</span></span>
+<span id="cb26-154"><a href="#cb26-154" aria-hidden="true" tabindex="-1"></a><span class="co">--| code-fold: false</span></span>
+<span id="cb26-155"><a href="#cb26-155" aria-hidden="true" tabindex="-1"></a><span class="kw">SHOW</span> <span class="kw">TABLES</span>;</span>
+<span id="cb26-156"><a href="#cb26-156" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb26-157"><a href="#cb26-157" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-158"><a href="#cb26-158" aria-hidden="true" tabindex="-1"></a><span class="in">```{sql connection=con_pokemon}</span></span>
+<span id="cb26-159"><a href="#cb26-159" aria-hidden="true" tabindex="-1"></a><span class="co">--| code-fold: false</span></span>
+<span id="cb26-160"><a href="#cb26-160" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span> <span class="kw">FROM</span> pokemon <span class="kw">LIMIT</span> <span class="dv">5</span>;</span>
+<span id="cb26-161"><a href="#cb26-161" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb26-162"><a href="#cb26-162" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb26-163"><a href="#cb26-163" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-164"><a href="#cb26-164" aria-hidden="true" tabindex="-1"></a><span class="fu">## Querying the database</span></span>
+<span id="cb26-165"><a href="#cb26-165" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-166"><a href="#cb26-166" aria-hidden="true" tabindex="-1"></a>With the database in place, we can answer questions that would be tedious to look</span>
+<span id="cb26-167"><a href="#cb26-167" aria-hidden="true" tabindex="-1"></a>up by hand, those being filtering Pokémon by tier, typing, stats, and more. Each query below runs directly against the database.</span>
+<span id="cb26-168"><a href="#cb26-168" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-169"><a href="#cb26-169" aria-hidden="true" tabindex="-1"></a><span class="fu">### The heaviest Pokémon in the OU tier</span></span>
 <span id="cb26-170"><a href="#cb26-170" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-171"><a href="#cb26-171" aria-hidden="true" tabindex="-1"></a><span class="fu">### The heaviest Pokémon in the OU tier</span></span>
-<span id="cb26-172"><a href="#cb26-172" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-173"><a href="#cb26-173" aria-hidden="true" tabindex="-1"></a><span class="in">```{sql connection=con_pokemon}</span></span>
-<span id="cb26-174"><a href="#cb26-174" aria-hidden="true" tabindex="-1"></a><span class="co">-- heaviest pokemon in the OU (overused) competitive format (Muizz)</span></span>
-<span id="cb26-175"><a href="#cb26-175" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> name, weight, formats</span>
-<span id="cb26-176"><a href="#cb26-176" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> pokemon</span>
-<span id="cb26-177"><a href="#cb26-177" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> formats <span class="op">=</span> <span class="st">'OU'</span></span>
-<span id="cb26-178"><a href="#cb26-178" aria-hidden="true" tabindex="-1"></a><span class="kw">ORDER</span> <span class="kw">BY</span> weight <span class="kw">DESC</span></span>
-<span id="cb26-179"><a href="#cb26-179" aria-hidden="true" tabindex="-1"></a><span class="kw">LIMIT</span> <span class="dv">1</span>;</span>
-<span id="cb26-180"><a href="#cb26-180" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb26-171"><a href="#cb26-171" aria-hidden="true" tabindex="-1"></a><span class="in">```{sql connection=con_pokemon}</span></span>
+<span id="cb26-172"><a href="#cb26-172" aria-hidden="true" tabindex="-1"></a><span class="co">-- heaviest pokemon in the OU (overused) competitive format (Muizz)</span></span>
+<span id="cb26-173"><a href="#cb26-173" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> name, weight, formats</span>
+<span id="cb26-174"><a href="#cb26-174" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> pokemon</span>
+<span id="cb26-175"><a href="#cb26-175" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> formats <span class="op">=</span> <span class="st">'OU'</span></span>
+<span id="cb26-176"><a href="#cb26-176" aria-hidden="true" tabindex="-1"></a><span class="kw">ORDER</span> <span class="kw">BY</span> weight <span class="kw">DESC</span></span>
+<span id="cb26-177"><a href="#cb26-177" aria-hidden="true" tabindex="-1"></a><span class="kw">LIMIT</span> <span class="dv">1</span>;</span>
+<span id="cb26-178"><a href="#cb26-178" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb26-179"><a href="#cb26-179" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-180"><a href="#cb26-180" aria-hidden="true" tabindex="-1"></a>*The single heaviest Pokémon among those competing in the top "OverUsed" tier.*</span>
 <span id="cb26-181"><a href="#cb26-181" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-182"><a href="#cb26-182" aria-hidden="true" tabindex="-1"></a>*The single heaviest Pokémon among those competing in the top "OverUsed" tier.*</span>
+<span id="cb26-182"><a href="#cb26-182" aria-hidden="true" tabindex="-1"></a><span class="fu">### Strongest Pokémon in OU, by total base stats</span></span>
 <span id="cb26-183"><a href="#cb26-183" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-184"><a href="#cb26-184" aria-hidden="true" tabindex="-1"></a><span class="fu">### Strongest Pokémon in OU, by total base stats</span></span>
-<span id="cb26-185"><a href="#cb26-185" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-186"><a href="#cb26-186" aria-hidden="true" tabindex="-1"></a><span class="in">```{sql connection=con_pokemon}</span></span>
-<span id="cb26-187"><a href="#cb26-187" aria-hidden="true" tabindex="-1"></a><span class="co">-- base stat total of pokemon in OU tier, highest to lowest (Martin)</span></span>
-<span id="cb26-188"><a href="#cb26-188" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> pokemon, base_experience, formats, (pokemon_info<span class="ch">.</span>hp <span class="op">+</span> pokemon_info<span class="ch">.</span>attack <span class="op">+</span> pokemon_info<span class="ch">.</span>defense <span class="op">+</span> pokemon_info<span class="ch">.</span>special_attack <span class="op">+</span> pokemon_info<span class="ch">.</span>special_defense <span class="op">+</span> pokemon_info<span class="ch">.</span>speed) <span class="kw">AS</span> total</span>
-<span id="cb26-189"><a href="#cb26-189" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> pokemon_info</span>
-<span id="cb26-190"><a href="#cb26-190" aria-hidden="true" tabindex="-1"></a><span class="kw">JOIN</span> pokemon <span class="kw">ON</span> pokemon<span class="ch">.</span>name <span class="op">=</span> pokemon_info<span class="ch">.</span>pokemon</span>
-<span id="cb26-191"><a href="#cb26-191" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> formats <span class="op">=</span> <span class="st">'OU'</span></span>
-<span id="cb26-192"><a href="#cb26-192" aria-hidden="true" tabindex="-1"></a><span class="kw">ORDER</span> <span class="kw">BY</span> total <span class="kw">DESC</span></span>
-<span id="cb26-193"><a href="#cb26-193" aria-hidden="true" tabindex="-1"></a><span class="kw">LIMIT</span> <span class="dv">10</span>;</span>
-<span id="cb26-194"><a href="#cb26-194" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb26-195"><a href="#cb26-195" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-196"><a href="#cb26-196" aria-hidden="true" tabindex="-1"></a>*Joins the two tables and sums the six base stats on the fly to rank the most</span>
-<span id="cb26-197"><a href="#cb26-197" aria-hidden="true" tabindex="-1"></a>statistically powerful Pokémon in the OU tier.*</span>
+<span id="cb26-184"><a href="#cb26-184" aria-hidden="true" tabindex="-1"></a><span class="in">```{sql connection=con_pokemon}</span></span>
+<span id="cb26-185"><a href="#cb26-185" aria-hidden="true" tabindex="-1"></a><span class="co">-- base stat total of pokemon in OU tier, highest to lowest (Martin)</span></span>
+<span id="cb26-186"><a href="#cb26-186" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> pokemon, base_experience, formats, (pokemon_info<span class="ch">.</span>hp <span class="op">+</span> pokemon_info<span class="ch">.</span>attack <span class="op">+</span> pokemon_info<span class="ch">.</span>defense <span class="op">+</span> pokemon_info<span class="ch">.</span>special_attack <span class="op">+</span> pokemon_info<span class="ch">.</span>special_defense <span class="op">+</span> pokemon_info<span class="ch">.</span>speed) <span class="kw">AS</span> total</span>
+<span id="cb26-187"><a href="#cb26-187" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> pokemon_info</span>
+<span id="cb26-188"><a href="#cb26-188" aria-hidden="true" tabindex="-1"></a><span class="kw">JOIN</span> pokemon <span class="kw">ON</span> pokemon<span class="ch">.</span>name <span class="op">=</span> pokemon_info<span class="ch">.</span>pokemon</span>
+<span id="cb26-189"><a href="#cb26-189" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> formats <span class="op">=</span> <span class="st">'OU'</span></span>
+<span id="cb26-190"><a href="#cb26-190" aria-hidden="true" tabindex="-1"></a><span class="kw">ORDER</span> <span class="kw">BY</span> total <span class="kw">DESC</span></span>
+<span id="cb26-191"><a href="#cb26-191" aria-hidden="true" tabindex="-1"></a><span class="kw">LIMIT</span> <span class="dv">10</span>;</span>
+<span id="cb26-192"><a href="#cb26-192" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb26-193"><a href="#cb26-193" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-194"><a href="#cb26-194" aria-hidden="true" tabindex="-1"></a>*Joins the two tables and sums the six base stats on the fly to rank the most</span>
+<span id="cb26-195"><a href="#cb26-195" aria-hidden="true" tabindex="-1"></a>statistically powerful Pokémon in the OU tier.*</span>
+<span id="cb26-196"><a href="#cb26-196" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-197"><a href="#cb26-197" aria-hidden="true" tabindex="-1"></a><span class="fu">### The tallest Pokémon in each generation</span></span>
 <span id="cb26-198"><a href="#cb26-198" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-199"><a href="#cb26-199" aria-hidden="true" tabindex="-1"></a><span class="fu">### The tallest Pokémon in each generation</span></span>
-<span id="cb26-200"><a href="#cb26-200" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-201"><a href="#cb26-201" aria-hidden="true" tabindex="-1"></a><span class="in">```{sql connection=con_pokemon}</span></span>
-<span id="cb26-202"><a href="#cb26-202" aria-hidden="true" tabindex="-1"></a><span class="co">-- tallest pokemon in each generation (Muizz)</span></span>
-<span id="cb26-203"><a href="#cb26-203" aria-hidden="true" tabindex="-1"></a><span class="co">-- Uses a correlated subquery: for each row, compare its height to the MAX height</span></span>
-<span id="cb26-204"><a href="#cb26-204" aria-hidden="true" tabindex="-1"></a><span class="co">-- within that same generation, keeping only the matches.</span></span>
-<span id="cb26-205"><a href="#cb26-205" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> generation_id, pokemon, height</span>
-<span id="cb26-206"><a href="#cb26-206" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> pokemon_info <span class="kw">AS</span> p1</span>
-<span id="cb26-207"><a href="#cb26-207" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> height <span class="op">=</span> (</span>
-<span id="cb26-208"><a href="#cb26-208" aria-hidden="true" tabindex="-1"></a>        <span class="kw">SELECT</span> <span class="fu">MAX</span>(height)</span>
-<span id="cb26-209"><a href="#cb26-209" aria-hidden="true" tabindex="-1"></a>        <span class="kw">FROM</span> pokemon_info <span class="kw">AS</span> p2</span>
-<span id="cb26-210"><a href="#cb26-210" aria-hidden="true" tabindex="-1"></a>        <span class="kw">WHERE</span> p1<span class="ch">.</span>generation_id <span class="op">=</span> p2<span class="ch">.</span>generation_id</span>
-<span id="cb26-211"><a href="#cb26-211" aria-hidden="true" tabindex="-1"></a>      )</span>
-<span id="cb26-212"><a href="#cb26-212" aria-hidden="true" tabindex="-1"></a>  <span class="kw">AND</span> generation_id <span class="kw">IS</span> <span class="kw">NOT</span> <span class="kw">NULL</span>;   <span class="co">-- regional forms have no listed generation (real NULLs)</span></span>
-<span id="cb26-213"><a href="#cb26-213" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb26-214"><a href="#cb26-214" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-215"><a href="#cb26-215" aria-hidden="true" tabindex="-1"></a>*A correlated subquery returns both the Pokémon name and its generation in one</span>
-<span id="cb26-216"><a href="#cb26-216" aria-hidden="true" tabindex="-1"></a>result — something a simple <span class="in">`GROUP BY MAX(height)`</span> can't do on its own.*</span>
+<span id="cb26-199"><a href="#cb26-199" aria-hidden="true" tabindex="-1"></a><span class="in">```{sql connection=con_pokemon}</span></span>
+<span id="cb26-200"><a href="#cb26-200" aria-hidden="true" tabindex="-1"></a><span class="co">-- tallest pokemon in each generation (Muizz)</span></span>
+<span id="cb26-201"><a href="#cb26-201" aria-hidden="true" tabindex="-1"></a><span class="co">-- Uses a correlated subquery: for each row, compare its height to the MAX height</span></span>
+<span id="cb26-202"><a href="#cb26-202" aria-hidden="true" tabindex="-1"></a><span class="co">-- within that same generation, keeping only the matches.</span></span>
+<span id="cb26-203"><a href="#cb26-203" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> generation_id, pokemon, height</span>
+<span id="cb26-204"><a href="#cb26-204" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> pokemon_info <span class="kw">AS</span> p1</span>
+<span id="cb26-205"><a href="#cb26-205" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> height <span class="op">=</span> (</span>
+<span id="cb26-206"><a href="#cb26-206" aria-hidden="true" tabindex="-1"></a>        <span class="kw">SELECT</span> <span class="fu">MAX</span>(height)</span>
+<span id="cb26-207"><a href="#cb26-207" aria-hidden="true" tabindex="-1"></a>        <span class="kw">FROM</span> pokemon_info <span class="kw">AS</span> p2</span>
+<span id="cb26-208"><a href="#cb26-208" aria-hidden="true" tabindex="-1"></a>        <span class="kw">WHERE</span> p1<span class="ch">.</span>generation_id <span class="op">=</span> p2<span class="ch">.</span>generation_id</span>
+<span id="cb26-209"><a href="#cb26-209" aria-hidden="true" tabindex="-1"></a>      )</span>
+<span id="cb26-210"><a href="#cb26-210" aria-hidden="true" tabindex="-1"></a>  <span class="kw">AND</span> generation_id <span class="kw">IS</span> <span class="kw">NOT</span> <span class="kw">NULL</span>;   <span class="co">-- regional forms have no listed generation (real NULLs)</span></span>
+<span id="cb26-211"><a href="#cb26-211" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb26-212"><a href="#cb26-212" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-213"><a href="#cb26-213" aria-hidden="true" tabindex="-1"></a>*A correlated subquery returns both the Pokémon name and its generation in one</span>
+<span id="cb26-214"><a href="#cb26-214" aria-hidden="true" tabindex="-1"></a>result which is something a simple <span class="in">`GROUP BY MAX(height)`</span> can't do on its own.*</span>
+<span id="cb26-215"><a href="#cb26-215" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-216"><a href="#cb26-216" aria-hidden="true" tabindex="-1"></a><span class="fu">### Poison-type Pokémon in the UU tier</span></span>
 <span id="cb26-217"><a href="#cb26-217" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-218"><a href="#cb26-218" aria-hidden="true" tabindex="-1"></a><span class="fu">### Poison-type Pokémon in the UU tier</span></span>
-<span id="cb26-219"><a href="#cb26-219" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-220"><a href="#cb26-220" aria-hidden="true" tabindex="-1"></a><span class="in">```{sql connection=con_pokemon}</span></span>
-<span id="cb26-221"><a href="#cb26-221" aria-hidden="true" tabindex="-1"></a><span class="co">-- poison types in the UU (underused) format (Muizz)</span></span>
-<span id="cb26-222"><a href="#cb26-222" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> pokemon, type_1, type_2, pokemon<span class="ch">.</span>formats</span>
-<span id="cb26-223"><a href="#cb26-223" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> pokemon_info</span>
-<span id="cb26-224"><a href="#cb26-224" aria-hidden="true" tabindex="-1"></a><span class="kw">JOIN</span> pokemon <span class="kw">ON</span> pokemon_info<span class="ch">.</span>pokemon <span class="op">=</span> pokemon<span class="ch">.</span>name</span>
-<span id="cb26-225"><a href="#cb26-225" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> (type_1 <span class="op">=</span> <span class="st">'poison'</span> <span class="kw">OR</span> type_2 <span class="op">=</span> <span class="st">'poison'</span>)</span>
-<span id="cb26-226"><a href="#cb26-226" aria-hidden="true" tabindex="-1"></a>  <span class="kw">AND</span> pokemon<span class="ch">.</span>formats <span class="op">=</span> <span class="st">'UU'</span>;</span>
-<span id="cb26-227"><a href="#cb26-227" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb26-218"><a href="#cb26-218" aria-hidden="true" tabindex="-1"></a><span class="in">```{sql connection=con_pokemon}</span></span>
+<span id="cb26-219"><a href="#cb26-219" aria-hidden="true" tabindex="-1"></a><span class="co">-- poison types in the UU (underused) format (Muizz)</span></span>
+<span id="cb26-220"><a href="#cb26-220" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> pokemon, type_1, type_2, pokemon<span class="ch">.</span>formats</span>
+<span id="cb26-221"><a href="#cb26-221" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> pokemon_info</span>
+<span id="cb26-222"><a href="#cb26-222" aria-hidden="true" tabindex="-1"></a><span class="kw">JOIN</span> pokemon <span class="kw">ON</span> pokemon_info<span class="ch">.</span>pokemon <span class="op">=</span> pokemon<span class="ch">.</span>name</span>
+<span id="cb26-223"><a href="#cb26-223" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> (type_1 <span class="op">=</span> <span class="st">'poison'</span> <span class="kw">OR</span> type_2 <span class="op">=</span> <span class="st">'poison'</span>)</span>
+<span id="cb26-224"><a href="#cb26-224" aria-hidden="true" tabindex="-1"></a>  <span class="kw">AND</span> pokemon<span class="ch">.</span>formats <span class="op">=</span> <span class="st">'UU'</span>;</span>
+<span id="cb26-225"><a href="#cb26-225" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb26-226"><a href="#cb26-226" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-227"><a href="#cb26-227" aria-hidden="true" tabindex="-1"></a>*Checks both type slots so dual-typed Poison Pokémon aren't missed.*</span>
 <span id="cb26-228"><a href="#cb26-228" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-229"><a href="#cb26-229" aria-hidden="true" tabindex="-1"></a>*Checks both type slots so dual-typed Poison Pokémon aren't missed.*</span>
+<span id="cb26-229"><a href="#cb26-229" aria-hidden="true" tabindex="-1"></a><span class="fu">### Monster egg-group Pokémon, by generation (NFE / LC tiers)</span></span>
 <span id="cb26-230"><a href="#cb26-230" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-231"><a href="#cb26-231" aria-hidden="true" tabindex="-1"></a><span class="fu">### Monster egg-group Pokémon, by generation (NFE / LC tiers)</span></span>
-<span id="cb26-232"><a href="#cb26-232" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-233"><a href="#cb26-233" aria-hidden="true" tabindex="-1"></a><span class="in">```{sql connection=con_pokemon}</span></span>
-<span id="cb26-234"><a href="#cb26-234" aria-hidden="true" tabindex="-1"></a><span class="co">-- count of NFE (not fully evolved) or LC (little cup) Monster egg-group pokemon</span></span>
-<span id="cb26-235"><a href="#cb26-235" aria-hidden="true" tabindex="-1"></a><span class="co">-- per generation (Muizz)</span></span>
-<span id="cb26-236"><a href="#cb26-236" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> generation_id <span class="kw">AS</span> gen, <span class="fu">COUNT</span>(<span class="op">*</span>) <span class="kw">AS</span> num_pokemon</span>
-<span id="cb26-237"><a href="#cb26-237" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> pokemon_info</span>
-<span id="cb26-238"><a href="#cb26-238" aria-hidden="true" tabindex="-1"></a><span class="kw">JOIN</span> pokemon <span class="kw">ON</span> pokemon_info<span class="ch">.</span>pokemon <span class="op">=</span> pokemon<span class="ch">.</span>name</span>
-<span id="cb26-239"><a href="#cb26-239" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> (pokemon<span class="ch">.</span>formats <span class="op">=</span> <span class="st">'NFE'</span> <span class="kw">OR</span> pokemon<span class="ch">.</span>formats <span class="op">=</span> <span class="st">'LC'</span>)</span>
-<span id="cb26-240"><a href="#cb26-240" aria-hidden="true" tabindex="-1"></a>  <span class="kw">AND</span> (egg_group_1 <span class="op">=</span> <span class="st">'monster'</span> <span class="kw">OR</span> egg_group_2 <span class="op">=</span> <span class="st">'monster'</span>)</span>
-<span id="cb26-241"><a href="#cb26-241" aria-hidden="true" tabindex="-1"></a><span class="kw">GROUP</span> <span class="kw">BY</span> gen;</span>
-<span id="cb26-242"><a href="#cb26-242" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb26-231"><a href="#cb26-231" aria-hidden="true" tabindex="-1"></a><span class="in">```{sql connection=con_pokemon}</span></span>
+<span id="cb26-232"><a href="#cb26-232" aria-hidden="true" tabindex="-1"></a><span class="co">-- count of NFE (not fully evolved) or LC (little cup) Monster egg-group pokemon</span></span>
+<span id="cb26-233"><a href="#cb26-233" aria-hidden="true" tabindex="-1"></a><span class="co">-- per generation (Muizz)</span></span>
+<span id="cb26-234"><a href="#cb26-234" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> generation_id <span class="kw">AS</span> gen, <span class="fu">COUNT</span>(<span class="op">*</span>) <span class="kw">AS</span> num_pokemon</span>
+<span id="cb26-235"><a href="#cb26-235" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> pokemon_info</span>
+<span id="cb26-236"><a href="#cb26-236" aria-hidden="true" tabindex="-1"></a><span class="kw">JOIN</span> pokemon <span class="kw">ON</span> pokemon_info<span class="ch">.</span>pokemon <span class="op">=</span> pokemon<span class="ch">.</span>name</span>
+<span id="cb26-237"><a href="#cb26-237" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> (pokemon<span class="ch">.</span>formats <span class="op">=</span> <span class="st">'NFE'</span> <span class="kw">OR</span> pokemon<span class="ch">.</span>formats <span class="op">=</span> <span class="st">'LC'</span>)</span>
+<span id="cb26-238"><a href="#cb26-238" aria-hidden="true" tabindex="-1"></a>  <span class="kw">AND</span> (egg_group_1 <span class="op">=</span> <span class="st">'monster'</span> <span class="kw">OR</span> egg_group_2 <span class="op">=</span> <span class="st">'monster'</span>)</span>
+<span id="cb26-239"><a href="#cb26-239" aria-hidden="true" tabindex="-1"></a><span class="kw">GROUP</span> <span class="kw">BY</span> gen;</span>
+<span id="cb26-240"><a href="#cb26-240" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb26-241"><a href="#cb26-241" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-242"><a href="#cb26-242" aria-hidden="true" tabindex="-1"></a>*Combines a join, multiple tier filters, and a grouped count in one query.*</span>
 <span id="cb26-243"><a href="#cb26-243" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-244"><a href="#cb26-244" aria-hidden="true" tabindex="-1"></a>*Combines a join, multiple tier filters, and a grouped count in one query.*</span>
+<span id="cb26-244"><a href="#cb26-244" aria-hidden="true" tabindex="-1"></a><span class="fu">### Quick stats</span></span>
 <span id="cb26-245"><a href="#cb26-245" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-246"><a href="#cb26-246" aria-hidden="true" tabindex="-1"></a><span class="fu">### Quick stats</span></span>
+<span id="cb26-246"><a href="#cb26-246" aria-hidden="true" tabindex="-1"></a>A few smaller lookups against the same database.</span>
 <span id="cb26-247"><a href="#cb26-247" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-248"><a href="#cb26-248" aria-hidden="true" tabindex="-1"></a>A few smaller lookups against the same database.</span>
+<span id="cb26-248"><a href="#cb26-248" aria-hidden="true" tabindex="-1"></a>How many moves have non-neutral priority?</span>
 <span id="cb26-249"><a href="#cb26-249" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-250"><a href="#cb26-250" aria-hidden="true" tabindex="-1"></a>How many moves have non-neutral priority?</span>
-<span id="cb26-251"><a href="#cb26-251" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-252"><a href="#cb26-252" aria-hidden="true" tabindex="-1"></a><span class="in">```{sql connection=con_pokemon}</span></span>
-<span id="cb26-253"><a href="#cb26-253" aria-hidden="true" tabindex="-1"></a><span class="co">-- number of moves with priority other than 0 (Martin)</span></span>
-<span id="cb26-254"><a href="#cb26-254" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="fu">COUNT</span>(<span class="op">*</span>) <span class="kw">AS</span> num_rows</span>
-<span id="cb26-255"><a href="#cb26-255" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> moves</span>
-<span id="cb26-256"><a href="#cb26-256" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> priority <span class="op">&lt;&gt;</span> <span class="dv">0</span>;</span>
-<span id="cb26-257"><a href="#cb26-257" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb26-250"><a href="#cb26-250" aria-hidden="true" tabindex="-1"></a><span class="in">```{sql connection=con_pokemon}</span></span>
+<span id="cb26-251"><a href="#cb26-251" aria-hidden="true" tabindex="-1"></a><span class="co">-- number of moves with priority other than 0 (Martin)</span></span>
+<span id="cb26-252"><a href="#cb26-252" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="fu">COUNT</span>(<span class="op">*</span>) <span class="kw">AS</span> num_rows</span>
+<span id="cb26-253"><a href="#cb26-253" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> moves</span>
+<span id="cb26-254"><a href="#cb26-254" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> priority <span class="op">&lt;&gt;</span> <span class="dv">0</span>;</span>
+<span id="cb26-255"><a href="#cb26-255" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb26-256"><a href="#cb26-256" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-257"><a href="#cb26-257" aria-hidden="true" tabindex="-1"></a>The ten lightest Pokémon:</span>
 <span id="cb26-258"><a href="#cb26-258" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-259"><a href="#cb26-259" aria-hidden="true" tabindex="-1"></a>The ten lightest Pokémon:</span>
-<span id="cb26-260"><a href="#cb26-260" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-261"><a href="#cb26-261" aria-hidden="true" tabindex="-1"></a><span class="in">```{sql connection=con_pokemon}</span></span>
-<span id="cb26-262"><a href="#cb26-262" aria-hidden="true" tabindex="-1"></a><span class="co">-- top 10 lightest pokemon (Martin)</span></span>
-<span id="cb26-263"><a href="#cb26-263" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> pokemon, weight</span>
-<span id="cb26-264"><a href="#cb26-264" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> pokemon_info</span>
-<span id="cb26-265"><a href="#cb26-265" aria-hidden="true" tabindex="-1"></a><span class="kw">ORDER</span> <span class="kw">BY</span> weight</span>
-<span id="cb26-266"><a href="#cb26-266" aria-hidden="true" tabindex="-1"></a><span class="kw">LIMIT</span> <span class="dv">10</span>;</span>
-<span id="cb26-267"><a href="#cb26-267" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb26-259"><a href="#cb26-259" aria-hidden="true" tabindex="-1"></a><span class="in">```{sql connection=con_pokemon}</span></span>
+<span id="cb26-260"><a href="#cb26-260" aria-hidden="true" tabindex="-1"></a><span class="co">-- top 10 lightest pokemon (Martin)</span></span>
+<span id="cb26-261"><a href="#cb26-261" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> pokemon, weight</span>
+<span id="cb26-262"><a href="#cb26-262" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> pokemon_info</span>
+<span id="cb26-263"><a href="#cb26-263" aria-hidden="true" tabindex="-1"></a><span class="kw">ORDER</span> <span class="kw">BY</span> weight</span>
+<span id="cb26-264"><a href="#cb26-264" aria-hidden="true" tabindex="-1"></a><span class="kw">LIMIT</span> <span class="dv">10</span>;</span>
+<span id="cb26-265"><a href="#cb26-265" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb26-266"><a href="#cb26-266" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-267"><a href="#cb26-267" aria-hidden="true" tabindex="-1"></a>Count of Pokémon by primary type, most common first:</span>
 <span id="cb26-268"><a href="#cb26-268" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-269"><a href="#cb26-269" aria-hidden="true" tabindex="-1"></a>Count of Pokémon by primary type, most common first:</span>
-<span id="cb26-270"><a href="#cb26-270" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-271"><a href="#cb26-271" aria-hidden="true" tabindex="-1"></a><span class="in">```{sql connection=con_pokemon}</span></span>
-<span id="cb26-272"><a href="#cb26-272" aria-hidden="true" tabindex="-1"></a><span class="co">-- number of pokemon per primary type, highest to lowest (Martin)</span></span>
-<span id="cb26-273"><a href="#cb26-273" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> type_1, <span class="fu">COUNT</span>(<span class="op">*</span>) <span class="kw">AS</span> type_count</span>
-<span id="cb26-274"><a href="#cb26-274" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> pokemon_info</span>
-<span id="cb26-275"><a href="#cb26-275" aria-hidden="true" tabindex="-1"></a><span class="kw">GROUP</span> <span class="kw">BY</span> type_1</span>
-<span id="cb26-276"><a href="#cb26-276" aria-hidden="true" tabindex="-1"></a><span class="kw">ORDER</span> <span class="kw">BY</span> type_count <span class="kw">DESC</span>;</span>
-<span id="cb26-277"><a href="#cb26-277" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb26-269"><a href="#cb26-269" aria-hidden="true" tabindex="-1"></a><span class="in">```{sql connection=con_pokemon}</span></span>
+<span id="cb26-270"><a href="#cb26-270" aria-hidden="true" tabindex="-1"></a><span class="co">-- number of pokemon per primary type, highest to lowest (Martin)</span></span>
+<span id="cb26-271"><a href="#cb26-271" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> type_1, <span class="fu">COUNT</span>(<span class="op">*</span>) <span class="kw">AS</span> type_count</span>
+<span id="cb26-272"><a href="#cb26-272" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> pokemon_info</span>
+<span id="cb26-273"><a href="#cb26-273" aria-hidden="true" tabindex="-1"></a><span class="kw">GROUP</span> <span class="kw">BY</span> type_1</span>
+<span id="cb26-274"><a href="#cb26-274" aria-hidden="true" tabindex="-1"></a><span class="kw">ORDER</span> <span class="kw">BY</span> type_count <span class="kw">DESC</span>;</span>
+<span id="cb26-275"><a href="#cb26-275" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb26-276"><a href="#cb26-276" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-277"><a href="#cb26-277" aria-hidden="true" tabindex="-1"></a><span class="fu">## Visualizations</span></span>
 <span id="cb26-278"><a href="#cb26-278" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-279"><a href="#cb26-279" aria-hidden="true" tabindex="-1"></a><span class="fu">## Visualizations</span></span>
+<span id="cb26-279"><a href="#cb26-279" aria-hidden="true" tabindex="-1"></a><span class="fu">### Average base-stat total by generation</span></span>
 <span id="cb26-280"><a href="#cb26-280" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-281"><a href="#cb26-281" aria-hidden="true" tabindex="-1"></a><span class="fu">### Average base-stat total by generation</span></span>
-<span id="cb26-282"><a href="#cb26-282" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-283"><a href="#cb26-283" aria-hidden="true" tabindex="-1"></a>Which generation introduced the strongest Pokémon on average? We average the six</span>
-<span id="cb26-284"><a href="#cb26-284" aria-hidden="true" tabindex="-1"></a>base stats across every Pokémon in each generation.</span>
-<span id="cb26-285"><a href="#cb26-285" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-286"><a href="#cb26-286" aria-hidden="true" tabindex="-1"></a><span class="in">```{sql connection=con_pokemon}</span></span>
-<span id="cb26-287"><a href="#cb26-287" aria-hidden="true" tabindex="-1"></a><span class="co">--| code-summary: "SQL: average stat total per generation"</span></span>
-<span id="cb26-288"><a href="#cb26-288" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> generation_id,</span>
-<span id="cb26-289"><a href="#cb26-289" aria-hidden="true" tabindex="-1"></a>       <span class="fu">AVG</span>(hp <span class="op">+</span> attack <span class="op">+</span> defense <span class="op">+</span> special_attack <span class="op">+</span> special_defense <span class="op">+</span> speed) <span class="kw">AS</span> total</span>
-<span id="cb26-290"><a href="#cb26-290" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> pokemon_info</span>
-<span id="cb26-291"><a href="#cb26-291" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> generation_id <span class="kw">IS</span> <span class="kw">NOT</span> <span class="kw">NULL</span>   <span class="co">-- exclude regional forms with no listed generation</span></span>
-<span id="cb26-292"><a href="#cb26-292" aria-hidden="true" tabindex="-1"></a><span class="kw">GROUP</span> <span class="kw">BY</span> generation_id;</span>
-<span id="cb26-293"><a href="#cb26-293" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb26-294"><a href="#cb26-294" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-297"><a href="#cb26-297" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb26-298"><a href="#cb26-298" aria-hidden="true" tabindex="-1"></a><span class="co">#| code-summary: "Plot: average stat total per generation"</span></span>
-<span id="cb26-299"><a href="#cb26-299" aria-hidden="true" tabindex="-1"></a><span class="co">#| message: false</span></span>
-<span id="cb26-300"><a href="#cb26-300" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
-<span id="cb26-301"><a href="#cb26-301" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-302"><a href="#cb26-302" aria-hidden="true" tabindex="-1"></a>generation_plot <span class="ot">&lt;-</span> DBI<span class="sc">::</span><span class="fu">dbGetQuery</span>(con_pokemon,</span>
-<span id="cb26-303"><a href="#cb26-303" aria-hidden="true" tabindex="-1"></a>  <span class="st">"SELECT generation_id,</span></span>
-<span id="cb26-304"><a href="#cb26-304" aria-hidden="true" tabindex="-1"></a><span class="st">          AVG(hp + attack + defense + special_attack + special_defense + speed) AS total</span></span>
-<span id="cb26-305"><a href="#cb26-305" aria-hidden="true" tabindex="-1"></a><span class="st">   FROM pokemon_info</span></span>
-<span id="cb26-306"><a href="#cb26-306" aria-hidden="true" tabindex="-1"></a><span class="st">   WHERE generation_id IS NOT NULL</span></span>
-<span id="cb26-307"><a href="#cb26-307" aria-hidden="true" tabindex="-1"></a><span class="st">   GROUP BY generation_id;"</span></span>
-<span id="cb26-308"><a href="#cb26-308" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb26-309"><a href="#cb26-309" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-310"><a href="#cb26-310" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(generation_plot, <span class="fu">aes</span>(<span class="at">x =</span> generation_id, <span class="at">y =</span> total)) <span class="sc">+</span></span>
-<span id="cb26-311"><a href="#cb26-311" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="fu">aes</span>(<span class="at">fill =</span> total)) <span class="sc">+</span></span>
-<span id="cb26-312"><a href="#cb26-312" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> <span class="fu">round</span>(total)), <span class="at">nudge_y =</span> <span class="dv">10</span>) <span class="sc">+</span></span>
-<span id="cb26-313"><a href="#cb26-313" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_gradient</span>(<span class="at">low =</span> <span class="st">"white"</span>, <span class="at">high =</span> <span class="st">"red"</span>) <span class="sc">+</span></span>
-<span id="cb26-314"><a href="#cb26-314" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Generation"</span>, <span class="at">y =</span> <span class="st">"Average Stat Total"</span>,</span>
-<span id="cb26-315"><a href="#cb26-315" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">"Average Base Stats by Generation"</span>) <span class="sc">+</span></span>
-<span id="cb26-316"><a href="#cb26-316" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>)</span>
-<span id="cb26-317"><a href="#cb26-317" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb26-318"><a href="#cb26-318" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-319"><a href="#cb26-319" aria-hidden="true" tabindex="-1"></a>*Average base-stat totals stay fairly close across generations, with later</span>
-<span id="cb26-320"><a href="#cb26-320" aria-hidden="true" tabindex="-1"></a>generations trending slightly higher.*</span>
+<span id="cb26-281"><a href="#cb26-281" aria-hidden="true" tabindex="-1"></a>Which generation introduced the strongest Pokémon on average? We average the six</span>
+<span id="cb26-282"><a href="#cb26-282" aria-hidden="true" tabindex="-1"></a>base stats across every Pokémon in each generation.</span>
+<span id="cb26-283"><a href="#cb26-283" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-284"><a href="#cb26-284" aria-hidden="true" tabindex="-1"></a><span class="in">```{sql connection=con_pokemon}</span></span>
+<span id="cb26-285"><a href="#cb26-285" aria-hidden="true" tabindex="-1"></a><span class="co">--| code-summary: "SQL: average stat total per generation"</span></span>
+<span id="cb26-286"><a href="#cb26-286" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> generation_id,</span>
+<span id="cb26-287"><a href="#cb26-287" aria-hidden="true" tabindex="-1"></a>       <span class="fu">AVG</span>(hp <span class="op">+</span> attack <span class="op">+</span> defense <span class="op">+</span> special_attack <span class="op">+</span> special_defense <span class="op">+</span> speed) <span class="kw">AS</span> total</span>
+<span id="cb26-288"><a href="#cb26-288" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> pokemon_info</span>
+<span id="cb26-289"><a href="#cb26-289" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> generation_id <span class="kw">IS</span> <span class="kw">NOT</span> <span class="kw">NULL</span>   <span class="co">-- exclude regional forms with no listed generation</span></span>
+<span id="cb26-290"><a href="#cb26-290" aria-hidden="true" tabindex="-1"></a><span class="kw">GROUP</span> <span class="kw">BY</span> generation_id;</span>
+<span id="cb26-291"><a href="#cb26-291" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb26-292"><a href="#cb26-292" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-295"><a href="#cb26-295" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb26-296"><a href="#cb26-296" aria-hidden="true" tabindex="-1"></a><span class="co">#| code-summary: "Plot: average stat total per generation"</span></span>
+<span id="cb26-297"><a href="#cb26-297" aria-hidden="true" tabindex="-1"></a><span class="co">#| message: false</span></span>
+<span id="cb26-298"><a href="#cb26-298" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
+<span id="cb26-299"><a href="#cb26-299" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-300"><a href="#cb26-300" aria-hidden="true" tabindex="-1"></a>generation_plot <span class="ot">&lt;-</span> DBI<span class="sc">::</span><span class="fu">dbGetQuery</span>(con_pokemon,</span>
+<span id="cb26-301"><a href="#cb26-301" aria-hidden="true" tabindex="-1"></a>  <span class="st">"SELECT generation_id,</span></span>
+<span id="cb26-302"><a href="#cb26-302" aria-hidden="true" tabindex="-1"></a><span class="st">          AVG(hp + attack + defense + special_attack + special_defense + speed) AS total</span></span>
+<span id="cb26-303"><a href="#cb26-303" aria-hidden="true" tabindex="-1"></a><span class="st">   FROM pokemon_info</span></span>
+<span id="cb26-304"><a href="#cb26-304" aria-hidden="true" tabindex="-1"></a><span class="st">   WHERE generation_id IS NOT NULL</span></span>
+<span id="cb26-305"><a href="#cb26-305" aria-hidden="true" tabindex="-1"></a><span class="st">   GROUP BY generation_id;"</span></span>
+<span id="cb26-306"><a href="#cb26-306" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb26-307"><a href="#cb26-307" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-308"><a href="#cb26-308" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(generation_plot, <span class="fu">aes</span>(<span class="at">x =</span> generation_id, <span class="at">y =</span> total)) <span class="sc">+</span></span>
+<span id="cb26-309"><a href="#cb26-309" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="fu">aes</span>(<span class="at">fill =</span> total)) <span class="sc">+</span></span>
+<span id="cb26-310"><a href="#cb26-310" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> <span class="fu">round</span>(total)), <span class="at">nudge_y =</span> <span class="dv">10</span>) <span class="sc">+</span></span>
+<span id="cb26-311"><a href="#cb26-311" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_gradient</span>(<span class="at">low =</span> <span class="st">"white"</span>, <span class="at">high =</span> <span class="st">"red"</span>) <span class="sc">+</span></span>
+<span id="cb26-312"><a href="#cb26-312" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Generation"</span>, <span class="at">y =</span> <span class="st">"Average Stat Total"</span>,</span>
+<span id="cb26-313"><a href="#cb26-313" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">"Average Base Stats by Generation"</span>) <span class="sc">+</span></span>
+<span id="cb26-314"><a href="#cb26-314" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>)</span>
+<span id="cb26-315"><a href="#cb26-315" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb26-316"><a href="#cb26-316" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-317"><a href="#cb26-317" aria-hidden="true" tabindex="-1"></a>*Average base-stat totals stay fairly close across generations, with later</span>
+<span id="cb26-318"><a href="#cb26-318" aria-hidden="true" tabindex="-1"></a>generations trending slightly higher.*</span>
+<span id="cb26-319"><a href="#cb26-319" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-320"><a href="#cb26-320" aria-hidden="true" tabindex="-1"></a><span class="fu">### Move power distribution by type</span></span>
 <span id="cb26-321"><a href="#cb26-321" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-322"><a href="#cb26-322" aria-hidden="true" tabindex="-1"></a><span class="fu">### Move power distribution by type</span></span>
-<span id="cb26-323"><a href="#cb26-323" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-324"><a href="#cb26-324" aria-hidden="true" tabindex="-1"></a>How hard does each move type hit? We look at the spread of base power per type,</span>
-<span id="cb26-325"><a href="#cb26-325" aria-hidden="true" tabindex="-1"></a>excluding status moves (which have 0 power).</span>
-<span id="cb26-326"><a href="#cb26-326" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-327"><a href="#cb26-327" aria-hidden="true" tabindex="-1"></a><span class="in">```{sql connection=con_pokemon}</span></span>
-<span id="cb26-328"><a href="#cb26-328" aria-hidden="true" tabindex="-1"></a><span class="co">--| code-summary: "SQL: damaging-move power by type"</span></span>
-<span id="cb26-329"><a href="#cb26-329" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="kw">type</span>, <span class="fu">power</span></span>
-<span id="cb26-330"><a href="#cb26-330" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> moves</span>
-<span id="cb26-331"><a href="#cb26-331" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> <span class="fu">power</span> <span class="op">&gt;</span> <span class="dv">1</span>   <span class="co">-- drop status / non-damaging moves</span></span>
-<span id="cb26-332"><a href="#cb26-332" aria-hidden="true" tabindex="-1"></a><span class="kw">ORDER</span> <span class="kw">BY</span> <span class="fu">power</span> <span class="kw">DESC</span>;</span>
-<span id="cb26-333"><a href="#cb26-333" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb26-334"><a href="#cb26-334" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-337"><a href="#cb26-337" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb26-338"><a href="#cb26-338" aria-hidden="true" tabindex="-1"></a><span class="co">#| code-summary: "Plot: move power distribution by type"</span></span>
-<span id="cb26-339"><a href="#cb26-339" aria-hidden="true" tabindex="-1"></a><span class="co">#| message: false</span></span>
-<span id="cb26-340"><a href="#cb26-340" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
+<span id="cb26-322"><a href="#cb26-322" aria-hidden="true" tabindex="-1"></a>How hard does each move type hit? We look at the spread of base power per type,</span>
+<span id="cb26-323"><a href="#cb26-323" aria-hidden="true" tabindex="-1"></a>excluding status moves (which have 0 power).</span>
+<span id="cb26-324"><a href="#cb26-324" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-325"><a href="#cb26-325" aria-hidden="true" tabindex="-1"></a><span class="in">```{sql connection=con_pokemon}</span></span>
+<span id="cb26-326"><a href="#cb26-326" aria-hidden="true" tabindex="-1"></a><span class="co">--| code-summary: "SQL: damaging-move power by type"</span></span>
+<span id="cb26-327"><a href="#cb26-327" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="kw">type</span>, <span class="fu">power</span></span>
+<span id="cb26-328"><a href="#cb26-328" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> moves</span>
+<span id="cb26-329"><a href="#cb26-329" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> <span class="fu">power</span> <span class="op">&gt;</span> <span class="dv">1</span>   <span class="co">-- drop status / non-damaging moves</span></span>
+<span id="cb26-330"><a href="#cb26-330" aria-hidden="true" tabindex="-1"></a><span class="kw">ORDER</span> <span class="kw">BY</span> <span class="fu">power</span> <span class="kw">DESC</span>;</span>
+<span id="cb26-331"><a href="#cb26-331" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb26-332"><a href="#cb26-332" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-335"><a href="#cb26-335" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb26-336"><a href="#cb26-336" aria-hidden="true" tabindex="-1"></a><span class="co">#| code-summary: "Plot: move power distribution by type"</span></span>
+<span id="cb26-337"><a href="#cb26-337" aria-hidden="true" tabindex="-1"></a><span class="co">#| message: false</span></span>
+<span id="cb26-338"><a href="#cb26-338" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
+<span id="cb26-339"><a href="#cb26-339" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-340"><a href="#cb26-340" aria-hidden="true" tabindex="-1"></a>type_plot <span class="ot">&lt;-</span> DBI<span class="sc">::</span><span class="fu">dbGetQuery</span>(con_pokemon,<span class="st">"SELECT type, power FROM moves WHERE power &gt; 1"</span>)</span>
 <span id="cb26-341"><a href="#cb26-341" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-342"><a href="#cb26-342" aria-hidden="true" tabindex="-1"></a>type_plot <span class="ot">&lt;-</span> DBI<span class="sc">::</span><span class="fu">dbGetQuery</span>(con_pokemon,<span class="st">"SELECT type, power FROM moves WHERE power &gt; 1"</span>)</span>
-<span id="cb26-343"><a href="#cb26-343" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-344"><a href="#cb26-344" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(type_plot, <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">reorder</span>(type, power, <span class="at">FUN =</span> median), <span class="at">y =</span> power, <span class="at">fill =</span> type)) <span class="sc">+</span></span>
-<span id="cb26-345"><a href="#cb26-345" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">alpha =</span> <span class="fl">0.6</span>) <span class="sc">+</span></span>
-<span id="cb26-346"><a href="#cb26-346" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb26-347"><a href="#cb26-347" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>), <span class="at">legend.position =</span> <span class="st">"none"</span>) <span class="sc">+</span></span>
-<span id="cb26-348"><a href="#cb26-348" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Distribution of Move Power by Type"</span>,</span>
-<span id="cb26-349"><a href="#cb26-349" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Move Type"</span>, <span class="at">y =</span> <span class="st">"Base Power"</span>)</span>
-<span id="cb26-350"><a href="#cb26-350" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb26-351"><a href="#cb26-351" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-352"><a href="#cb26-352" aria-hidden="true" tabindex="-1"></a>*Ordered by median power: even though Normal has the single highest-powered move,</span>
-<span id="cb26-353"><a href="#cb26-353" aria-hidden="true" tabindex="-1"></a>its median is near the bottom — while Fire is consistently high, with the top median.*</span>
-<span id="cb26-354"><a href="#cb26-354" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-357"><a href="#cb26-357" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb26-358"><a href="#cb26-358" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
-<span id="cb26-359"><a href="#cb26-359" aria-hidden="true" tabindex="-1"></a>DBI<span class="sc">::</span><span class="fu">dbDisconnect</span>(con_pokemon, <span class="at">shutdown =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb26-360"><a href="#cb26-360" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb26-342"><a href="#cb26-342" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(type_plot, <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">reorder</span>(type, power, <span class="at">FUN =</span> median), <span class="at">y =</span> power, <span class="at">fill =</span> type)) <span class="sc">+</span></span>
+<span id="cb26-343"><a href="#cb26-343" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">alpha =</span> <span class="fl">0.6</span>) <span class="sc">+</span></span>
+<span id="cb26-344"><a href="#cb26-344" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb26-345"><a href="#cb26-345" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>), <span class="at">legend.position =</span> <span class="st">"none"</span>) <span class="sc">+</span></span>
+<span id="cb26-346"><a href="#cb26-346" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Distribution of Move Power by Type"</span>,</span>
+<span id="cb26-347"><a href="#cb26-347" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Move Type"</span>, <span class="at">y =</span> <span class="st">"Base Power"</span>)</span>
+<span id="cb26-348"><a href="#cb26-348" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb26-349"><a href="#cb26-349" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-350"><a href="#cb26-350" aria-hidden="true" tabindex="-1"></a>*Ordered by median power: even though Normal has the single highest-powered move,</span>
+<span id="cb26-351"><a href="#cb26-351" aria-hidden="true" tabindex="-1"></a>its median is near the bottom — while Fire is consistently high, with the top median.*</span>
+<span id="cb26-352"><a href="#cb26-352" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-355"><a href="#cb26-355" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb26-356"><a href="#cb26-356" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
+<span id="cb26-357"><a href="#cb26-357" aria-hidden="true" tabindex="-1"></a>DBI<span class="sc">::</span><span class="fu">dbDisconnect</span>(con_pokemon, <span class="at">shutdown =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb26-358"><a href="#cb26-358" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb26-359"><a href="#cb26-359" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-360"><a href="#cb26-360" aria-hidden="true" tabindex="-1"></a><span class="fu">## Sources &amp; tools</span></span>
 <span id="cb26-361"><a href="#cb26-361" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-362"><a href="#cb26-362" aria-hidden="true" tabindex="-1"></a><span class="fu">## Sources &amp; tools</span></span>
-<span id="cb26-363"><a href="#cb26-363" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-364"><a href="#cb26-364" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Competitive Pokémon tier dataset (<span class="in">`pokemon_df`</span>, <span class="in">`moves_df`</span>) — <span class="co">[</span><span class="ot">Kaggle</span><span class="co">](https://www.kaggle.com/datasets/varlawend/competitive-pokmon-tier-dataset)</span></span>
-<span id="cb26-365"><a href="#cb26-365" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Pokémon info dataset (<span class="in">`pokemon_info_df`</span>) — <span class="co">[</span><span class="ot">TidyTuesday, 2025-04-01</span><span class="co">](https://github.com/rfordatascience/tidytuesday/blob/main/data/2025/2025-04-01)</span></span>
-<span id="cb26-366"><a href="#cb26-366" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>AI tools (LLM) were used as an aid for dataset editing during development.</span>
+<span id="cb26-362"><a href="#cb26-362" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Competitive Pokémon tier dataset (<span class="in">`pokemon_df`</span>, <span class="in">`moves_df`</span>) — <span class="co">[</span><span class="ot">Kaggle</span><span class="co">](https://www.kaggle.com/datasets/varlawend/competitive-pokmon-tier-dataset)</span></span>
+<span id="cb26-363"><a href="#cb26-363" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Pokémon info dataset (<span class="in">`pokemon_info_df`</span>) — <span class="co">[</span><span class="ot">TidyTuesday, 2025-04-01</span><span class="co">](https://github.com/rfordatascience/tidytuesday/blob/main/data/2025/2025-04-01)</span></span>
+<span id="cb26-364"><a href="#cb26-364" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>AI tools (LLM) were used as an aid for dataset editing during development.</span>
 </code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
