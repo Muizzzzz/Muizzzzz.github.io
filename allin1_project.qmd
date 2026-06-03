@@ -1,6 +1,78 @@
 ---
 title: "R Package: allin1"
-format: html
+format:
+  html:
+    code-tools: true
+toc: true
+toc-depth: 2
 ---
 
-soooooon
+*R package built for ADC 405. [Package website](https://adc-405-s26.github.io/allin1/) · [GitHub repo](https://github.com/ADC-405-S26/allin1)*
+
+## Overview
+
+`allin1` is an R package that bundles shortcuts for common but tedious
+data-wrangling tasks, the kind of small multi-step operations you end up
+rewriting constantly. Each function collapses a familiar `dplyr` pattern into a
+single call. The package currently exports three functions:
+
+- **`sort_mutate()`** — create a new column and sort the data frame by it in one step.
+- **`drop_na_rows()`** — remove every row containing a missing value.
+- **`top_n_percent()`** — keep the top *N* percent of rows by a chosen variable.
+
+The package is fully documented (with a vignette and per-function reference) on its
+[pkgdown website](https://adc-405-s26.github.io/allin1/); this page is a quick tour.
+
+## Installation
+
+```{r}
+#| eval: false
+# install.packages("devtools")
+devtools::install_github("ADC-405-S26/allin1")
+```
+
+```{r}
+#| message: false
+#| warning: false
+library(allin1)
+```
+
+## Usage
+
+The examples below use `employees`, a small demo dataset that ships with the package.
+
+### `sort_mutate()`
+
+Add an `earnings` column (`hours_worked * hourly_wage`) and sort by it, highest first — a mutate and an arrange in a single call:
+
+```{r}
+employees |>
+  sort_mutate("earnings", hours_worked * hourly_wage, desc = TRUE)
+```
+
+### `drop_na_rows()`
+
+Drop any row with a missing value — handy for quick cleanup before an analysis:
+
+```{r}
+employees |>
+  drop_na_rows()
+```
+
+### `top_n_percent()`
+
+Keep the highest-paid 50% of employees by `hourly_wage`:
+
+```{r}
+employees |>
+  top_n_percent(hourly_wage, percent = 50)
+```
+
+## Documentation & source
+
+The complete function reference, argument details, and a longer vignette live on the
+package website. The full source, including the function definitions in `R/`, unit
+tests in `tests/`, and the documentation, is on GitHub.
+
+- Package website: [adc-405-s26.github.io/allin1](https://adc-405-s26.github.io/allin1/)
+- Source code: [github.com/ADC-405-S26/allin1](https://github.com/ADC-405-S26/allin1)

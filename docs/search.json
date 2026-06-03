@@ -46,7 +46,7 @@
     "href": "allin1_project.html",
     "title": "R Package: allin1",
     "section": "",
-    "text": "soooooon"
+    "text": "R package built for ADC 405. Package website · GitHub repo"
   },
   {
     "objectID": "text_analysis_project.html",
@@ -194,5 +194,33 @@
     "title": "Importance of Pokémon Moves for New and Improving Players",
     "section": "Overview",
     "text": "Overview\nUsing a dataset of every Pokémon move through Generation 8, we applied text-analysis techniques like tokenization, regular expressions, sentiment analysis, and TF-IDF to the move descriptions to see what they reveal about how moves work. Among the findings: move names alone signal a move’s category (physical moves are contact words like “punch,” non-damaging ones are “beams” and “pulses”), and Burn is by far the most common status condition in the game.\n\n\nLoad packages and data\nlibrary(tidyverse)\nlibrary(tidytext)\nlibrary(textdata)\nlibrary(ggraph)\nlibrary(tidygraph)\n\n# the moves dataset\nmoves &lt;- read.csv(\"moves_df.csv\")"
+  },
+  {
+    "objectID": "allin1_project.html#overview",
+    "href": "allin1_project.html#overview",
+    "title": "R Package: allin1",
+    "section": "Overview",
+    "text": "Overview\nallin1 is an R package that bundles shortcuts for common but tedious data-wrangling tasks, the kind of small multi-step operations you end up rewriting constantly. Each function collapses a familiar dplyr pattern into a single call. The package currently exports three functions:\n\nsort_mutate() — create a new column and sort the data frame by it in one step.\ndrop_na_rows() — remove every row containing a missing value.\ntop_n_percent() — keep the top N percent of rows by a chosen variable.\n\nThe package is fully documented (with a vignette and per-function reference) on its pkgdown website; this page is a quick tour."
+  },
+  {
+    "objectID": "allin1_project.html#installation",
+    "href": "allin1_project.html#installation",
+    "title": "R Package: allin1",
+    "section": "Installation",
+    "text": "Installation\n\n# install.packages(\"devtools\")\ndevtools::install_github(\"ADC-405-S26/allin1\")\n\n\nlibrary(allin1)"
+  },
+  {
+    "objectID": "allin1_project.html#usage",
+    "href": "allin1_project.html#usage",
+    "title": "R Package: allin1",
+    "section": "Usage",
+    "text": "Usage\nThe examples below use employees, a small demo dataset that ships with the package.\n\nsort_mutate()\nAdd an earnings column (hours_worked * hourly_wage) and sort by it, highest first — a mutate and an arrange in a single call:\n\nemployees |&gt;\n  sort_mutate(\"earnings\", hours_worked * hourly_wage, desc = TRUE)\n\n     name hours_worked hourly_wage earnings\n1 Charlie           45          50     2250\n2   Alice           40          30     1200\n3     Bob           35          25      875\n4   David           20          20      400\n5    &lt;NA&gt;           NA          NA       NA\n\n\n\n\ndrop_na_rows()\nDrop any row with a missing value — handy for quick cleanup before an analysis:\n\nemployees |&gt;\n  drop_na_rows()\n\n     name hours_worked hourly_wage\n1   Alice           40          30\n2     Bob           35          25\n4 Charlie           45          50\n5   David           20          20\n\n\n\n\ntop_n_percent()\nKeep the highest-paid 50% of employees by hourly_wage:\n\nemployees |&gt;\n  top_n_percent(hourly_wage, percent = 50)\n\n     name hours_worked hourly_wage\n1 Charlie           45          50\n2   Alice           40          30"
+  },
+  {
+    "objectID": "allin1_project.html#documentation-source",
+    "href": "allin1_project.html#documentation-source",
+    "title": "R Package: allin1",
+    "section": "Documentation & source",
+    "text": "Documentation & source\nThe complete function reference, argument details, and a longer vignette live on the package website. The full source — including the function definitions in R/, unit tests in tests/, and the documentation — is on GitHub.\n\nPackage website: adc-405-s26.github.io/allin1\nSource code: github.com/ADC-405-S26/allin1"
   }
 ]
