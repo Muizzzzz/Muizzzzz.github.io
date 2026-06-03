@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Poster: The Evolution of S into R – Muizz Aman Khan</title>
+<title>Presentation: Visualizing Data in 3D with rayshader – Muizz Aman Khan</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -164,7 +164,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Poster: The Evolution of S into R</h1>
+<h1 class="title">Presentation: Visualizing Data in 3D with rayshader</h1>
 </div>
 
 
@@ -181,33 +181,34 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p><em>Poster project with Martin Tran for STAT 405 (Advanced Data Computing), built in R. <a href="S,-R,-and-Data-Science.html" target="_blank">Open the full poster →</a></em></p>
+<p><em>A “R Package of the Day” talk I built and presented in R, on the <a href="https://www.rayshader.com/"><code>rayshader</code></a> package. <a href="https://rpubs.com/Muizzzz/1436249" target="_blank">View the full slide deck on RPubs →</a></em></p>
 <section id="overview" class="level2">
 <h2 class="anchored" data-anchor-id="overview">Overview</h2>
-<p>A conference-style research poster tracing how the <strong>S</strong> language (Bell Labs, 1970s) evolved into <strong>R</strong>, and why S’s original design principles still underpin modern data science. The entire poster (layout, theme, and content) was generated from a single R Markdown source using the posterdown (<code>iheiddown</code>) format, so it’s fully reproducible from code rather than laid out by hand.</p>
+<p>A short presentation introducing <strong>rayshader</strong>, an R package that turns data into 2D and 3D visualizations using <em>raytracing</em> which is the same lighting technique used in video games and CGI. The talk explains how rayshader builds an image (elevation matrix → shade → render), then demonstrates it on R’s built-in <code>volcano</code> elevation data and on an ordinary <code>ggplot2</code> plot rendered into 3D. Built as a slide deck in Quarto and published to RPubs.</p>
 </section>
 <section id="preview" class="level2">
 <h2 class="anchored" data-anchor-id="preview">Preview</h2>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="S,-R,-and-Data-Science.html"><img src="poster_preview.png" class="img-fluid figure-img" style="width:100.0%"></a></p>
-<figcaption>Preview of the S-to-R poster</figcaption>
+<p><a href="https://rpubs.com/Muizzzz/1436249"><img src="ggplot_3d.png" class="img-fluid figure-img" style="width:100.0%"></a></p>
+<figcaption>A rayshader 3D render from the talk</figcaption>
 </figure>
 </div>
-<p><em>Click the poster to open the full-resolution version in a new tab.</em></p>
+<p><em>Click to open the full slide deck on RPubs.</em></p>
 </section>
 <section id="what-it-covers" class="level2">
 <h2 class="anchored" data-anchor-id="what-it-covers">What it covers</h2>
 <ul>
-<li>The lineage from <strong>S to R</strong>, and the three design ideas carried the whole way through: everything is an object, everything is a function call, and interfaces to other languages are built in.</li>
-<li>Why those choices mattered for data science, the <strong>data frame</strong>, models as objects, and the <strong>CRAN</strong> package ecosystem.</li>
-<li>R’s own innovations on top of S: open-source licensing, packages + CRAN, lexical scoping, and lazy evaluation.</li>
-<li>A comparison of core S concepts and how each lives on in R today.</li>
+<li>What rayshader is, and the raytracing idea behind it.</li>
+<li>The core pipeline: <code>sphere_shade()</code>, <code>ray_shade()</code>, <code>ambient_shade()</code>, then <code>plot_map()</code>, <code>plot_3d()</code>, and <code>plot_gg()</code>.</li>
+<li><strong>Demo 1:</strong> the built-in <code>volcano</code> elevation dataset, as both a 2D shaded map and an interactive 3D surface.</li>
+<li><strong>Demo 2:</strong> turning a plain <code>ggplot2</code> density plot of the Old Faithful data into a readable 3D surface where the two eruption clusters become obvious.</li>
+<li>Real-world uses: geography and terrain analysis, urban planning, data journalism, and game development.</li>
 </ul>
 </section>
 <section id="tools" class="level2">
 <h2 class="anchored" data-anchor-id="tools">Tools</h2>
-<p>R · R Markdown · posterdown (<code>iheiddown</code> template) · custom CSS theming</p>
+<p>R · Quarto · rayshader · ggplot2</p>
 
 
 </section>

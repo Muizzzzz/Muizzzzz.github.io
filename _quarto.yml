@@ -1,6 +1,8 @@
 project:
   type: website
   output-dir: docs
+  resources:
+    - Muizz_Resume.pdf
 
 website:
   title: "Muizz Aman Khan"
@@ -16,10 +18,14 @@ website:
             text: Text Analysis
           - href: allin1_project.qmd
             text: R Package (allin1)
-          - href: poster_project.qmd
-            text: Poster (S → R)
           - href: rhombus_project.qmd
             text: Rhombus StreamDeck Plugin
+      - text: Presentations
+        menu:
+          - href: poster_project.qmd
+            text: Poster (S → R)
+          - href: rayshader_project.qmd
+            text: "Talk: rayshader"
       - href: other_side.qmd
         text: My Other Side
 

@@ -327,5 +327,40 @@
     "title": "Poster: The Evolution of S into R",
     "section": "Tools",
     "text": "Tools\nR · R Markdown · posterdown (iheiddown template) · custom CSS theming"
+  },
+  {
+    "objectID": "rayshader_project.html",
+    "href": "rayshader_project.html",
+    "title": "Presentation: Visualizing Data in 3D with rayshader",
+    "section": "",
+    "text": "A “R Package of the Day” talk I built and presented in R, on the rayshader package. View the full slide deck on RPubs →"
+  },
+  {
+    "objectID": "rayshader_project.html#overview",
+    "href": "rayshader_project.html#overview",
+    "title": "Presentation: Visualizing Data in 3D with rayshader",
+    "section": "Overview",
+    "text": "Overview\nA short presentation introducing rayshader, an R package that turns data into 2D and 3D visualizations using raytracing which is the same lighting technique used in video games and CGI. The talk explains how rayshader builds an image (elevation matrix → shade → render), then demonstrates it on R’s built-in volcano elevation data and on an ordinary ggplot2 plot rendered into 3D. Built as a slide deck in Quarto and published to RPubs."
+  },
+  {
+    "objectID": "rayshader_project.html#preview",
+    "href": "rayshader_project.html#preview",
+    "title": "Presentation: Visualizing Data in 3D with rayshader",
+    "section": "Preview",
+    "text": "Preview\n\n\n\nA rayshader 3D render from the talk\n\n\nClick to open the full slide deck on RPubs."
+  },
+  {
+    "objectID": "rayshader_project.html#what-it-covers",
+    "href": "rayshader_project.html#what-it-covers",
+    "title": "Presentation: Visualizing Data in 3D with rayshader",
+    "section": "What it covers",
+    "text": "What it covers\n\nWhat rayshader is, and the raytracing idea behind it.\nThe core pipeline: sphere_shade(), ray_shade(), ambient_shade(), then plot_map(), plot_3d(), and plot_gg().\nDemo 1: the built-in volcano elevation dataset, as both a 2D shaded map and an interactive 3D surface.\nDemo 2: turning a plain ggplot2 density plot of the Old Faithful data into a readable 3D surface where the two eruption clusters become obvious.\nReal-world uses: geography and terrain analysis, urban planning, data journalism, and game development."
+  },
+  {
+    "objectID": "rayshader_project.html#tools",
+    "href": "rayshader_project.html#tools",
+    "title": "Presentation: Visualizing Data in 3D with rayshader",
+    "section": "Tools",
+    "text": "Tools\nR · Quarto · rayshader · ggplot2"
   }
 ]
