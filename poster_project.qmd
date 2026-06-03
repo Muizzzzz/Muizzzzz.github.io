@@ -4,7 +4,7 @@ toc: true
 toc-depth: 2
 ---
 
-*Poster project with Martin Tran for STAT 405 (Advanced Data Computing), built in R. [Open the full poster →](S,-R,-and-Data-Science.html){target="_blank"}*
+*Poster project with Martin Tran for STAT 405 (Advanced Data Computing), built in R. [Open the full poster in HTML view →](S,-R,-and-Data-Science.html){target="_blank"}*
 
 ## Overview
 
@@ -15,7 +15,7 @@ evolved into **R**, and why S's original design principles still underpin modern
 
 [![Preview of the S-to-R poster](poster_preview.png){width=100%}](S,-R,-and-Data-Science.pdf)
 
-*Click the poster to open the full-resolution version in a new tab.*
+*Click the poster to open the full-resolution version PDF in a new tab.*
 
 ## What it covers
 
