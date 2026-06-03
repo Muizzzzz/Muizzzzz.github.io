@@ -1,8 +1,6 @@
 project:
   type: website
   output-dir: docs
-  resources:
-    - Muizz_Resume.pdf
 
 website:
   title: "Muizz Aman Khan"
