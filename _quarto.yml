@@ -18,6 +18,8 @@ website:
             text: R Package (allin1)
           - href: rhombus_project.qmd
             text: Rhombus StreamDeck Plugin
+      - href: other_side.qmd
+        text: My Other Side
 
 format:
   html:
