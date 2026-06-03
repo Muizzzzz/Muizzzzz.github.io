@@ -16,16 +16,31 @@ about:
     - icon: envelope
       text: Email
       href: mailto:khanm@lawrence.edu
+    - icon: file-earmark-text
+      text: Résumé
+      href: Muizz_Resume.pdf
 ---
 
+## About Me
 
-Hi, I'm Muizz, a Data science / CS student at Lawrence University in Appleton, Wisconsin. My interest in Data science stems from my computer science interests and I wish to improve and utilize those skills to solve real world problems with data.
+Hi, I'm Muizz, a Data science and Computer Science student at Lawrence University in Appleton, Wisconsin. My interest in Data science stems from my computer science interests and I wish to improve and utilize those skills to solve real world problems with data.
 
 This site collects my projects and the things I'm working on. Take a look around.
 
 ## Skills
 
-Java (FX/FXML), Python, C++, SQL, JavaScript, HTML/CSS, R, TypeScript
+Java (FX/FXML), Python, C++, SQL, JavaScript, HTML/CSS, R, TypeScript · React · Node.js
+
+## Experience
+
+**Software Engineering Intern — Rhombus Systems** · Summer 2025 · Sacramento, CA
+
+- Built an Elgato Stream Deck plugin to control cameras, doors, and audio devices through the Rhombus API ([project page](rhombus_project.qmd)), including a Bash helper that launches HLS streams via MPV, plus dependency checks, URL refresh, and structured logging.
+- Implemented a controller-based UI in the Rhombus Console with React, TypeScript, and Gamepad API with dynamic keymapping, device detection, and persistent settings, then demoed it to the engineering team and published the plugin.
+
+## Education
+
+**Lawrence University** — B.A. Computer Science, Data Science, Minor in Mathematics · expected 2027 · Appleton, WI
 
 ## Beyond Class
 

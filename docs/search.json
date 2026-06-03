@@ -18,7 +18,7 @@
     "href": "index.html#skills",
     "title": "Muizz Aman Khan",
     "section": "Skills",
-    "text": "Skills\nJava (FX/FXML), Python, C++, SQL, JavaScript, HTML/CSS, R, TypeScript"
+    "text": "Skills\nJava (FX/FXML), Python, C++, SQL, JavaScript, HTML/CSS, R, TypeScript · React · Node.js"
   },
   {
     "objectID": "index.html#beyond-class",
@@ -257,5 +257,26 @@
     "title": "Rhombus StreamDeck Plugin",
     "section": "Source",
     "text": "Source\nFull source, build configuration, and setup instructions are on GitHub: github.com/Muizzzzz/rhombus-streamdeck."
+  },
+  {
+    "objectID": "index.html#experience",
+    "href": "index.html#experience",
+    "title": "Muizz Aman Khan",
+    "section": "Experience",
+    "text": "Experience\nSoftware Engineering Intern — Rhombus Systems · Summer 2025 · Sacramento, CA\n\nBuilt an Elgato Stream Deck plugin to control cameras, doors, and audio devices through the Rhombus API (project page), including a Bash helper that launches HLS streams via MPV, plus dependency checks, URL refresh, and structured logging.\nImplemented a controller-based UI in the Rhombus Console with React, TypeScript, and Gamepad API with dynamic keymapping, device detection, and persistent settings, then demoed it to the engineering team and published the plugin."
+  },
+  {
+    "objectID": "index.html#education",
+    "href": "index.html#education",
+    "title": "Muizz Aman Khan",
+    "section": "Education",
+    "text": "Education\nLawrence University — B.A. Computer Science, Data Science, Minor in Mathematics · expected 2027 · Appleton, WI"
+  },
+  {
+    "objectID": "index.html#about-me",
+    "href": "index.html#about-me",
+    "title": "Muizz Aman Khan",
+    "section": "",
+    "text": "Hi, I’m Muizz, a Data science / CS student at Lawrence University in Appleton, Wisconsin. My interest in Data science stems from my computer science interests and I wish to improve and utilize those skills to solve real world problems with data.\nThis site collects my projects and the things I’m working on. Take a look around."
   }
 ]
