@@ -22,9 +22,8 @@ One result we liked: even though *Normal* has the single highest-powered move in
 the game, *Fire* moves have the highest **median** power — Fire is consistently
 strong, while Normal's average is dragged down by many weak moves.
 
-Code on this page is collapsed by default — click **► Code** on any block to
-see the SQL or R behind a result. AI tools were used as a coding aid during
-development and are documented under [Sources & tools](#sources-tools).
+Code on this page is collapsed by default. Click **► Code** on any block to
+see the SQL or R behind a result. 
 
 ## Database setup
 
