@@ -53,7 +53,7 @@
     "href": "text_analysis_project.html",
     "title": "Importance of Pokémon Moves for New and Improving Players",
     "section": "",
-    "text": "Team project with Martin Tran for STAT 405, Advanced Data Computing. Full code and data on GitHub.\nLoad packages and data\nlibrary(tidyverse)\nlibrary(tidytext)\nlibrary(textdata)\nlibrary(ggraph)\nlibrary(tidygraph)\n\n# the moves dataset\nmoves &lt;- read.csv(\"moves_df.csv\")"
+    "text": "Team project with Martin Tran for STAT 405, Advanced Data Computing. Full code and data on GitHub."
   },
   {
     "objectID": "sql_project.html#setup",
@@ -187,5 +187,12 @@
     "title": "Importance of Pokémon Moves for New and Improving Players",
     "section": "Sources",
     "text": "Sources\n\nPokémon database — pokemondb.net\nCompetitive Pokémon tier dataset (moves_df) — Kaggle\nNetwork graph reference — R Graph Gallery"
+  },
+  {
+    "objectID": "text_analysis_project.html#overview",
+    "href": "text_analysis_project.html#overview",
+    "title": "Importance of Pokémon Moves for New and Improving Players",
+    "section": "Overview",
+    "text": "Overview\nUsing a dataset of every Pokémon move through Generation 8, we applied text-analysis techniques like tokenization, regular expressions, sentiment analysis, and TF-IDF to the move descriptions to see what they reveal about how moves work. Among the findings: move names alone signal a move’s category (physical moves are contact words like “punch,” non-damaging ones are “beams” and “pulses”), and Burn is by far the most common status condition in the game.\n\n\nLoad packages and data\nlibrary(tidyverse)\nlibrary(tidytext)\nlibrary(textdata)\nlibrary(ggraph)\nlibrary(tidygraph)\n\n# the moves dataset\nmoves &lt;- read.csv(\"moves_df.csv\")"
   }
 ]

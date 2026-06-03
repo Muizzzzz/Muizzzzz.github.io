@@ -12,6 +12,10 @@ toc-depth: 2
 
 *Team project with Martin Tran for STAT 405, Advanced Data Computing. Full code and data on [GitHub](https://github.com/ADC-405-S26/Project_3_TextAnalysis_Team_3).*
 
+## Overview
+
+Using a dataset of every Pokémon move through Generation 8, we applied text-analysis techniques like tokenization, regular expressions, sentiment analysis, and TF-IDF to the move *descriptions* to see what they reveal about how moves work. Among the findings: move names alone signal a move's category (physical moves are contact words like "punch," non-damaging ones are "beams" and "pulses"), and *Burn* is by far the most common status condition in the game.
+
 ```{r}
 #| message: false
 #| warning: false
