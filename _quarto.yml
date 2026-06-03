@@ -25,7 +25,9 @@ website:
           - href: rayshader_project.qmd
             text: "Talk: rayshader"
       - href: other_side.qmd
-        text: My Other Side
+        text: My Other Side  
+  page-footer:
+    center: "Built with [Quarto](https://quarto.org) · [Source on GitHub](https://github.com/Muizzzzz/Muizzzzz.github.io)"
 
 format:
   html:
